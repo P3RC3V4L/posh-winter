@@ -24,15 +24,21 @@
           "type": "root"
         },
         {
-          "background": "#007ACC",
-          "foreground": "#ffffff",
+          "background": "#007acc",
+          "foreground": "#aaaaaa",
           "powerline_symbol": "\ue0b0",
           "properties": {
-            "home_icon": " \ueb06 ",
-            "style": "full"
+            "home_icon": "<#ffffff,#007acc>\ueb06 </>",
+            "style": "full",
+            "mapped_locations": {
+              "~/git/Repos/*": "<#ffffff,#007acc>\uf09b</>",
+              "C:/Windows/*": "<#ffffff,#007acc>\ue62a</>"
+            },
+            "cycle": [ "#ffffff" ],
+            "folder_separator_icon": " \u276f "
           },
           "style": "powerline",
-          "template": "{{ .Path }}",
+          "template": " {{ .Path }}",
           "type": "path"
         },
         {
@@ -68,6 +74,23 @@
           "template": " {{ .FormattedMs }}",
           "trailing_diamond": "\ue0b4",
           "type": "executiontime"
+        },
+        {
+          "background": "#10A030",
+          "foreground": "#FFFFFF",
+          "background_templates": [
+            "{{ if gt .Code 0 }}#D08527{{ end }}",
+            "{{ if lt .Code 0 }}#bd0b0b{{ end }}"
+          ],
+          "leading_diamond": " \ue0b6",
+          "properties": {
+            "style": "roundrock",
+            "threshold": 0
+          },
+          "style": "diamond",
+          "template": "{{ .Code }}",
+          "trailing_diamond": "\ue0b4",
+          "type": "text"
         }
       ],
       "type": "prompt"
@@ -402,7 +425,7 @@
       "type": "prompt"
     }
   ],
-  "console_title_template": "{{ .Folder }}",
+  "console_title_template": "{{ .Folder }}{{ if .Root }} (admin){{ end }}",
   "final_space": true,
   "version": 2
 }
