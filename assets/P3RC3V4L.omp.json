@@ -5,6 +5,12 @@
       "alignment": "left",
       "segments": [
         {
+          "foreground": "#ffeb95",
+          "style": "plain",
+          "template": "{{ if .SSHSession }}[{{ .HostName }}]\u2500{{ end }}",
+          "type": "session"
+        },
+        {
           "background": "#ffeb95",
           "foreground": "#007ACC",
           "leading_diamond": "\u256d\u2500\ue0b6",
@@ -396,7 +402,13 @@
         {
           "foreground": "#ffeb95",
           "style": "plain",
-          "template": "\u2570\u2500",
+          "template": "{{ if .SSHSession }}\u2534{{ else }}\u2570{{ end }}",
+          "type": "session"
+        },
+        {
+          "foreground": "#ffeb95",
+          "style": "plain",
+          "template": "\u2500",
           "type": "text"
         },
         {
