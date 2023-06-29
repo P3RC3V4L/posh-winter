@@ -1,0 +1,6 @@
+        {
+          "foreground": "p:osBG",
+          "style": "plain",
+          "template": "[{{ .HostName }}]:\u2500\u2534\u2500",
+          "type": "session"
+        }

@@ -1,0 +1,34 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "palette": {
+    <<.\Palette.omp.template>>
+  },
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        <<.\Line1_Left.omp.template>>
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "right",
+      "overflow": "break",
+      "segments": [
+        <<.\Line1_Right.omp.template>>
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        <<.\Line2_Left.omp.template>>
+      ],
+      "type": "prompt"
+    }
+  ],
+  "console_title_template": "{{ .Folder }}{{ if .Root }} (admin){{ end }}",
+  "final_space": true,
+  "version": 2
+}
