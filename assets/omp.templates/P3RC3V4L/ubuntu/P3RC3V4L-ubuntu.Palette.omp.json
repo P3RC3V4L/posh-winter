@@ -6,4 +6,8 @@
     "pathBG": "p:plum",
     "pathSeparator": "p:midGray",
     "pathFG": "p:white",
-    "memoryBG": "p:orange"
+    "memoryBG": "p:orange",
+    "dev": "p:palegreen",
+    "staging": "p:paleblue",
+    "uat": "p:yellow",
+    "prod": "p:redNotice"
