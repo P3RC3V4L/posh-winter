@@ -1,6 +1,8 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
   "palette": {
+    "defaultFG": "#cccccc",
+    "defaultBG": "#0c0c0c",
     "yellow": "#ffeb95",
     "blue": "#007ACC",
     "orange": "#e95420",
@@ -15,14 +17,14 @@
     "error": "#e74856",
 
     "redNotice": "p:error",
-    "osBG": "p:yellow",
+    "osBG": "p:defaultFG",
     "osFG": "p:blue",
     "rootBG": "p:redNotice",
     "rootFG": "p:yellow",
     "pathBG": "p:blue",
     "pathSeparator": "p:midGray",
     "pathFG": "p:white",
-	"memoryBG": "p:plum"
+    "memoryBG": "p:plum"
   },
   "blocks": [
     {
@@ -31,7 +33,7 @@
         {
           "background": "p:osBG",
           "foreground": "p:osFG",
-          "leading_diamond": "\u256d\u2500\ue0b6",
+          "leading_diamond": "\u252c\u2500\ue0b6",
           "properties": {
             "windows": "\ue62a"
           },
@@ -423,9 +425,9 @@
       "newline": true,
       "segments": [
         {
-          "foreground": "p:osBG",
+          "foreground": "osBG",
           "style": "plain",
-          "template": "[{{ .HostName }}]:\u2500\u2534\u2500",
+          "template": "<p:defaultBG>[{{ .HostName }}]:</> \u2570\u2500",
           "type": "session"
         },
         {

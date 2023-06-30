@@ -1,0 +1,6 @@
+        {
+          "foreground": "osBG",
+          "style": "plain",
+          "template": "<p:defaultBG>[{{ .HostName }}]:</> \u2570\u2500",
+          "type": "session"
+        }
