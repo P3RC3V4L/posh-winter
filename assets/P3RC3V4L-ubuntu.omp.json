@@ -214,24 +214,6 @@
           "type": "crystal"
         },
         {
-          "background": "#ffffff",
-          "foreground": "#1d5185",
-          "leading_diamond": "\ue0b2",
-          "style": "diamond",
-          "template": "\uf40a  cf {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} ",
-          "trailing_diamond": "<transparent,#ffffff>\ue0b2</>",
-          "type": "cf"
-        },
-        {
-          "background": "#ffffff",
-          "foreground": "#1d5185",
-          "leading_diamond": "\ue0b2",
-          "style": "diamond",
-          "template": "\uf40a {{if .Org }}{{ .Org }}{{ end }}{{ if .Space }}/{{ .Space }}{{ end }} ",
-          "trailing_diamond": "<transparent,#ffffff>\ue0b2</>",
-          "type": "cftarget"
-        },
-        {
           "background": "#d2d2d2",
           "foreground": "#01a300",
           "leading_diamond": "\ue0b2",
@@ -441,18 +423,6 @@
           "style": "plain",
           "template": "{{ if eq .Env.P6_ENV \"prod\" }}<p:prod>(prod) </>{{ else if eq .Env.P6_ENV \"uat\" }}<p:uat>(uat) </>{{ else if eq .Env.P6_ENV \"staging\" }}<p:staging>(staging) </>{{ else if eq .Env.P6_ENV \"dev\" }}<p:dev>(dev) </>{{ else }}\u2570\u2500{{ end }}",
           "type": "text"
-        },
-        {
-          "background": "#1DB954",
-          "foreground": "#011627",
-          "leading_diamond": "\ue0b6",
-          "properties": {
-            "playing_icon": "\uf1bc "
-          },
-          "style": "diamond",
-          "template": " {{ .Icon }}{{ if ne .Status \"stopped\" }}{{ .Artist }} ~ {{ .Track }}{{ end }} ",
-          "trailing_diamond": "\ue0c6 ",
-          "type": "spotify"
         },
         {
           "foreground": "p:ok",

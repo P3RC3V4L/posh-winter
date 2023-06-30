@@ -71,24 +71,6 @@
           "type": "crystal"
         },
         {
-          "background": "#ffffff",
-          "foreground": "#1d5185",
-          "leading_diamond": "\ue0b2",
-          "style": "diamond",
-          "template": "\uf40a  cf {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} ",
-          "trailing_diamond": "<transparent,#ffffff>\ue0b2</>",
-          "type": "cf"
-        },
-        {
-          "background": "#ffffff",
-          "foreground": "#1d5185",
-          "leading_diamond": "\ue0b2",
-          "style": "diamond",
-          "template": "\uf40a {{if .Org }}{{ .Org }}{{ end }}{{ if .Space }}/{{ .Space }}{{ end }} ",
-          "trailing_diamond": "<transparent,#ffffff>\ue0b2</>",
-          "type": "cftarget"
-        },
-        {
           "background": "#d2d2d2",
           "foreground": "#01a300",
           "leading_diamond": "\ue0b2",

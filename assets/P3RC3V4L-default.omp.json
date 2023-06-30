@@ -1,12 +1,16 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
   "palette": {
+    "defaultFG": "#cccccc",
+    "defaultBG": "#0c0c0c",
     "yellow": "#ffeb95",
     "blue": "#007ACC",
     "orange": "#e95420",
     "white": "#ffffff",
     "plum": "#772953",
     "midGray": "#aaaaaa",
+	"palegreen": "#6ad865",
+	"paleblue": "#329ee6",
     "light": "#d6deeb",
     "dark": "#575656",
     "night": "#1a1a1a",
@@ -22,7 +26,7 @@
     "pathBG": "p:blue",
     "pathSeparator": "p:midGray",
     "pathFG": "p:white",
-	"memoryBG": "p:plum"
+    "memoryBG": "p:plum"
   },
   "blocks": [
     {
@@ -199,24 +203,6 @@
           "template": "\uE370 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} ",
           "trailing_diamond": "<transparent,#000000>\ue0b2</>",
           "type": "crystal"
-        },
-        {
-          "background": "#ffffff",
-          "foreground": "#1d5185",
-          "leading_diamond": "\ue0b2",
-          "style": "diamond",
-          "template": "\uf40a  cf {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} ",
-          "trailing_diamond": "<transparent,#ffffff>\ue0b2</>",
-          "type": "cf"
-        },
-        {
-          "background": "#ffffff",
-          "foreground": "#1d5185",
-          "leading_diamond": "\ue0b2",
-          "style": "diamond",
-          "template": "\uf40a {{if .Org }}{{ .Org }}{{ end }}{{ if .Space }}/{{ .Space }}{{ end }} ",
-          "trailing_diamond": "<transparent,#ffffff>\ue0b2</>",
-          "type": "cftarget"
         },
         {
           "background": "#d2d2d2",
@@ -427,18 +413,6 @@
           "style": "plain",
           "template": "\u2570\u2500",
           "type": "text"
-        },
-        {
-          "background": "#1DB954",
-          "foreground": "#011627",
-          "leading_diamond": "\ue0b6",
-          "properties": {
-            "playing_icon": "\uf1bc "
-          },
-          "style": "diamond",
-          "template": " {{ .Icon }}{{ if ne .Status \"stopped\" }}{{ .Artist }} ~ {{ .Track }}{{ end }} ",
-          "trailing_diamond": "\ue0c6 ",
-          "type": "spotify"
         },
         {
           "foreground": "p:ok",

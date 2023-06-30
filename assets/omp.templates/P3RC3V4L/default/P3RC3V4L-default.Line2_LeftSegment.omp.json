@@ -1,16 +1,4 @@
         {
-          "background": "#1DB954",
-          "foreground": "#011627",
-          "leading_diamond": "\ue0b6",
-          "properties": {
-            "playing_icon": "\uf1bc "
-          },
-          "style": "diamond",
-          "template": " {{ .Icon }}{{ if ne .Status \"stopped\" }}{{ .Artist }} ~ {{ .Track }}{{ end }} ",
-          "trailing_diamond": "\ue0c6 ",
-          "type": "spotify"
-        },
-        {
           "foreground": "p:ok",
           "foreground_templates": [
             "{{ if gt .Code 0 }}p:warning{{ end }}",
