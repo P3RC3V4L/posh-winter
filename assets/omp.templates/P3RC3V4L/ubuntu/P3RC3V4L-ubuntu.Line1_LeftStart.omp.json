@@ -1,7 +1,7 @@
         {
           "foreground": "p:osBG",
           "style": "plain",
-          "template": "{{ if .Env.P6_ENV }}<p:defaultBG>({{ .Env.P6_ENV }}) </>{{ else }}\u256d\u2500{{ end }}",
+          "template": "{{ if .Env.P6_ENV }}<p:defaultBG>({{ .Env.P6_ENV }}</>{{ end }}\u256d\u2500",
           "type": "text"
         },
         {
