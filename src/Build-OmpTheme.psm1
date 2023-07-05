@@ -1,3 +1,5 @@
+$iteration = 1
+
 function Build-OmpTheme 
 {
     [CmdletBinding()]
@@ -10,7 +12,7 @@ function Build-OmpTheme
         [String] $Root = $env:POSH_THEMES_PATH
     )
 
-    Write-Host("building...")
+    Write-Host("Building theme: $Theme-$Variant...")
 
     $resultTheme = "$Theme-$Variant.omp.json"
     $resultTheme = Join-Path $Root $resultTheme 
@@ -27,15 +29,15 @@ function Build-OmpTheme
     }
     Copy-Item $themeTemplate $tempFile
 
-    if ($Verbose)
-    {
-        Write-Host("theme: $themeTemplate")
-        Write-Host("variant: $variantFolder")
-        Write-Host("temp: $tempFile")
-        Write-Host("result: $resultFile")
-    }
-    Merge-Template $tempFile $variantFolder
+    Write-Verbose("theme   = $themeTemplate")
+    Write-Verbose("variant = $variantFolder")
+    Write-Verbose("temp    = $tempFile")
+    Write-Verbose("result  = $resultTheme")
+    
+    $replaceCount = Merge-Template $tempFile $variantFolder
+    Write-Verbose("Theme compiled using $replaceCount chunks.")
 
+    Write-Host('Finalizing theme:')
     Move-Item $tempFile $resultTheme -Force
 
     return $resultTheme
@@ -50,14 +52,17 @@ function Merge-Template
         [Parameter(Mandatory)]
         [String] $VariantFolder
     )
-
-    $replaceCount = Join-Content $ThemeTemplate $VariantFolder
+    $replaced = Join-Content $ThemeTemplate $VariantFolder
+    $replaceCount = $replaced.count
 
     if ($replaceCount -gt 0) 
     {
+        $msg  = "$iteration. Iteration | Replacing:" + [Environment]::NewLine
+        $msg += $replaced -Join [Environment]::NewLine
+        Write-Verbose($msg)
+        $iteration++
         $replaceCount += Merge-Template $ThemeTemplate $VariantFolder
     }
-
     return $replaceCount
 }
 
@@ -70,7 +75,7 @@ function Join-Content
         [String] $VariantFolder
     )
 
-    $replaceCount = 0
+    $replaced = @()
     $data = Get-Content $ThemeTemplate -Raw
     $allmatches = [regex]::Matches($data, '(?<spaces>[ \t]*)<<(?<fname>[^<>]+)>>')
     foreach ($match in $allmatches) 
@@ -81,10 +86,10 @@ function Join-Content
         $inject = Get-Content $fpath -Raw
         $find = "$spaces<<$fname>>"
         $data = $data.Replace($find, $inject)
-        $replaceCount++
+        $replaced += "             $fname"
     }
     Set-Content $ThemeTemplate $data
-    return $replaceCount
+    return $replaced
 }
 
 Export-ModuleMember -Function Build-OmpTheme
