@@ -37,7 +37,7 @@ function Build-OmpTheme
     $replaceCount = Merge-Template $tempFile $variantFolder
     Write-Verbose("Theme compiled using $replaceCount chunks.")
 
-    Write-Host('Finalizing theme:')
+    Write-Host('$Theme-$Variant theme READY:')
     Move-Item $tempFile $resultTheme -Force
 
     return $resultTheme
@@ -59,7 +59,7 @@ function Merge-Template
     {
         $msg  = "$iteration. Iteration | Replacing:" + [Environment]::NewLine
         $msg += $replaced -Join [Environment]::NewLine
-        Write-Verbose($msg)
+        Write-Debug($msg)
         $iteration++
         $replaceCount += Merge-Template $ThemeTemplate $VariantFolder
     }
@@ -86,7 +86,7 @@ function Join-Content
         $inject = Get-Content $fpath -Raw
         $find = "$spaces<<$fname>>"
         $data = $data.Replace($find, $inject)
-        $replaced += "             $fname"
+        $replaced += "          $fname"
     }
     Set-Content $ThemeTemplate $data
     return $replaced
