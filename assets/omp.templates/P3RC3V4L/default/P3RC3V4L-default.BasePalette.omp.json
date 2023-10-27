@@ -13,4 +13,9 @@
     "night": "#1a1a1a",
     "ok": "#16c60c",
     "warning": "#dc9300",
-    "error": "#e74856"
+    "error": "#e74856",
+    "redNotice": "p:error",
+    "dev": "p:palegreen",
+    "staging": "p:paleblue",
+    "uat": "p:yellow",
+    "prod": "p:redNotice"

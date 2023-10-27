@@ -1,6 +1,0 @@
-        {
-          "foreground": "p:osBG",
-          "style": "plain",
-          "template": "{{ if eq .Env.P6_ENV \"prod\" }}<p:prod>\u276cprod\u276d</>{{ else if eq .Env.P6_ENV \"uat\" }}<p:uat>\u276cuat\u276d</>{{ else if eq .Env.P6_ENV \"staging\" }}<p:staging>\u276cstaging\u276d</>{{ else if eq .Env.P6_ENV \"dev\" }}<p:dev>\u276cdev\u276d</>{{ else }}\u2570{{ end }}\u2500",
-          "type": "text"
-        }

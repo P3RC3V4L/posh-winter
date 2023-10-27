@@ -8,7 +8,7 @@ You can build different variants of the same config template by specifying "inse
 
 ### Usage
 
-```
+```powershell
 Import-Module .\src\Build-OmpTheme
 Build-OmpTheme P3RC3V4L ubuntu -Root .\assets\
 ```

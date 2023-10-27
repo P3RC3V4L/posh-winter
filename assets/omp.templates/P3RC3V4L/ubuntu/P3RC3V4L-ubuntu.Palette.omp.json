@@ -1,4 +1,3 @@
-    "redNotice": "p:error",
     "osBG": "p:white",
     "osFG": "p:orange",
     "rootBG": "p:redNotice",
@@ -6,8 +5,4 @@
     "pathBG": "p:plum",
     "pathSeparator": "p:midGray",
     "pathFG": "p:white",
-    "memoryBG": "p:orange",
-    "dev": "p:palegreen",
-    "staging": "p:paleblue",
-    "uat": "p:yellow",
-    "prod": "p:redNotice"
+    "memoryBG": "p:orange"

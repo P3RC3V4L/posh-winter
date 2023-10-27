@@ -18,6 +18,10 @@
     "warning": "#dc9300",
     "error": "#e74856",
     "redNotice": "p:error",
+    "dev": "p:palegreen",
+    "staging": "p:paleblue",
+    "uat": "p:yellow",
+    "prod": "p:redNotice",
     "osBG": "p:white",
     "osFG": "p:orange",
     "rootBG": "p:redNotice",
@@ -25,11 +29,7 @@
     "pathBG": "p:plum",
     "pathSeparator": "p:midGray",
     "pathFG": "p:white",
-    "memoryBG": "p:orange",
-    "dev": "p:palegreen",
-    "staging": "p:paleblue",
-    "uat": "p:yellow",
-    "prod": "p:redNotice"
+    "memoryBG": "p:orange"
   },
   "blocks": [
     {
@@ -421,7 +421,7 @@
         {
           "foreground": "p:osBG",
           "style": "plain",
-          "template": "{{ if eq .Env.P6_ENV \"prod\" }}<p:prod>\u276cprod\u276d</>{{ else if eq .Env.P6_ENV \"uat\" }}<p:uat>\u276cuat\u276d</>{{ else if eq .Env.P6_ENV \"staging\" }}<p:staging>\u276cstaging\u276d</>{{ else if eq .Env.P6_ENV \"dev\" }}<p:dev>\u276cdev\u276d</>{{ else }}\u2570{{ end }}\u2500",
+          "template": "{{ if eq .Env.P6_ENV \"prod\" }}<p:prod>\u276cPRD\u276d</>{{ else if eq .Env.P6_ENV \"uat\" }}<p:uat>\u276cUAT\u276d</>{{ else if eq .Env.P6_ENV \"staging\" }}<p:staging>\u276cSTG\u276d</>{{ else if eq .Env.P6_ENV \"dev\" }}<p:dev>\u276cDEV\u276d</>{{ else }}\u2570{{ end }}\u2500",
           "type": "text"
         },
         {
