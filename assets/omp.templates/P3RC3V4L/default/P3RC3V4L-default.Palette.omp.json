@@ -1,6 +1,6 @@
     "osBG": "p:yellow",
     "osFG": "p:blue",
-    "rootBG": "p:redNotice",
+    "rootBG": "#ff0000",
     "rootFG": "p:yellow",
     "pathBG": "p:blue",
     "pathSeparator": "p:midGray",
