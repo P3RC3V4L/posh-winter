@@ -37,7 +37,7 @@ function Build-OmpTheme
     $replaceCount = Merge-Template $tempFile $variantFolder
     Write-Verbose("Theme compiled using $replaceCount chunks.")
 
-    Write-Host('$Theme-$Variant theme READY:')
+    Write-Host("$Theme-$Variant theme READY:")
     Move-Item $tempFile $resultTheme -Force
 
     return $resultTheme
