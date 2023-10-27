@@ -1,11 +1,23 @@
         {
           "foreground": "p:osBG",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ],
           "style": "plain",
-          "template": "{{ if .Env.P6_ENV }}<p:defaultBG>({{ .Env.P6_ENV }}</>{{ end }}\u256d\u2500",
+          "template": "{{ if .Env.P6_ENV }}    </>{{ end }}\u256d\u2500",
           "type": "text"
         },
         {
           "background": "p:osBG",
+          "background_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ],
           "foreground": "p:osFG",
           "leading_diamond": "\ue0b6",
           "properties": {

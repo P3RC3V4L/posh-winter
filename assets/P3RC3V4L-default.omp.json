@@ -38,12 +38,24 @@
       "segments": [
         {
           "foreground": "p:osBG",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ],
           "style": "plain",
-          "template": "{{ if .Env.P6_ENV }}<p:defaultBG>({{ .Env.P6_ENV }}</>{{ end }}\u256d\u2500",
+          "template": "{{ if .Env.P6_ENV }}    </>{{ end }}\u256d\u2500",
           "type": "text"
         },
         {
           "background": "p:osBG",
+          "background_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ],
           "foreground": "p:osFG",
           "leading_diamond": "\ue0b6",
           "properties": {
@@ -420,8 +432,17 @@
       "segments": [
         {
           "foreground": "p:osBG",
+          "foreground_templates": [
+            "{{ if .Env.P6_ENV }}black{{ end }}"
+          ],
+          "background_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ],
           "style": "plain",
-          "template": "{{ if eq .Env.P6_ENV \"prod\" }}<p:prod>\u276cPRD\u276d</>{{ else if eq .Env.P6_ENV \"uat\" }}<p:uat>\u276cUAT\u276d</>{{ else if eq .Env.P6_ENV \"staging\" }}<p:staging>\u276cSTG\u276d</>{{ else if eq .Env.P6_ENV \"dev\" }}<p:dev>\u276cDEV\u276d</>{{ else }}\u2570{{ end }}\u2500",
+          "template": "{{ if eq .Env.P6_ENV \"prod\" }} PRD\u2570<p:prod,transparent>\u2500</>{{ else if eq .Env.P6_ENV \"uat\" }} UAT\u2570<p:uat,transparent>\u2500</>{{ else if eq .Env.P6_ENV \"staging\" }} STG\u2570<p:staging,transparent>\u2500</>{{ else if eq .Env.P6_ENV \"dev\" }} DEV\u2570<p:dev,transparent>\u2500</>{{ else }}\u2570\u2500{{ end }}",
           "type": "text"
         },
         {
