@@ -1,0 +1,8 @@
+    "osBG": "#e6ecf1",
+    "osFG": "#4fa2ec",
+    "rootBG": "p:white",
+    "rootFG": "#ff0000",
+    "pathBG": "#5265c5",
+    "pathSeparator": "p:midGray",
+    "pathFG": "p:white",
+    "memoryBG": "p:blue"
