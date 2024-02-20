@@ -3,7 +3,7 @@
           "foreground": "p:rootFG",
           "powerline_symbol": "<<.\Line1_LeftSegment.powerline-trail.value>>",
           "style": "powerline",
-          "template": "\uf292",
+          "template": "\uf132",
           "type": "root"
         },
         {

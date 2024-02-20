@@ -3,8 +3,6 @@
   "palette": {
     "defaultFG": "#cccccc",
     "defaultBG": "#0c0c0c",
-    "rootBG": "#ffc5ca",
-    "rootFG": "#ff0000",
     "yellow": "#ffeb95",
     "blue": "#007ACC",
     "orange": "#e95420",
@@ -16,6 +14,8 @@
     "light": "#d6deeb",
     "dark": "#575656",
     "night": "#1a1a1a",
+    "rootBG": "#ff0000",
+    "rootFG": "p:white",
     "ok": "#16c60c",
     "warning": "#dc9300",
     "error": "#e74856",
@@ -54,7 +54,7 @@
           "foreground": "p:rootFG",
           "powerline_symbol": "\ue0b8",
           "style": "powerline",
-          "template": "\uf292",
+          "template": "\uf132",
           "type": "root"
         },
         {
