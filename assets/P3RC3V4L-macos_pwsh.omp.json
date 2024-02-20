@@ -9,8 +9,8 @@
     "white": "#ffffff",
     "plum": "#772953",
     "midGray": "#aaaaaa",
-	"palegreen": "#6ad865",
-	"paleblue": "#329ee6",
+    "palegreen": "#6ad865",
+    "paleblue": "#329ee6",
     "light": "#d6deeb",
     "dark": "#575656",
     "night": "#1a1a1a",
@@ -23,8 +23,8 @@
     "dev": "p:palegreen",
     "staging": "p:paleblue",
     "uat": "p:yellow",
-    "prod": "p:redNotice"
-,
+    "prod": "p:redNotice",
+
     "osBG": "#e6ecf1",
     "osFG": "#3d7ceb",
     "pathBG": "p:blue",
@@ -81,8 +81,7 @@
             "home_icon": "<p:pathFG>\ueb06</> ",
             "style": "full",
             "mapped_locations": {
-              "~/git/Repos/*": "<p:pathFG>\uf09b</> ",
-              "C:/Windows/*": "<p:pathFG>\ue62a</> "
+              "~/git/*": "<p:pathFG>\uf09b</> "
             },
             "cycle": [ "p:pathFG" ],
             "folder_separator_icon": "\ue0ba\ue0bc"

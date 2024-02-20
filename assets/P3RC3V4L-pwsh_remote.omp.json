@@ -9,8 +9,8 @@
     "white": "#ffffff",
     "plum": "#772953",
     "midGray": "#aaaaaa",
-	"palegreen": "#6ad865",
-	"paleblue": "#329ee6",
+    "palegreen": "#6ad865",
+    "paleblue": "#329ee6",
     "light": "#d6deeb",
     "dark": "#575656",
     "night": "#1a1a1a",
@@ -23,8 +23,7 @@
     "dev": "p:palegreen",
     "staging": "p:paleblue",
     "uat": "p:yellow",
-    "prod": "p:redNotice"
-,
+    "prod": "p:redNotice",
 
     "redNotice": "p:error",
     "osBG": "p:defaultFG",

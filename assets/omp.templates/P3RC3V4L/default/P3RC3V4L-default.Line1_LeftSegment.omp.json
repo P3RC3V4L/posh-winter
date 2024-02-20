@@ -14,8 +14,7 @@
             "home_icon": "<p:pathFG>\ueb06</> ",
             "style": "full",
             "mapped_locations": {
-              "~/git/Repos/*": "<p:pathFG>\uf09b</> ",
-              "C:/Windows/*": "<p:pathFG>\ue62a</> "
+              <<.\path-mapped_locations.value>>
             },
             "cycle": [ "p:pathFG" ],
             "folder_separator_icon": "<<.\Line1_LeftSegment.powerline-lead.value>><<.\Line1_LeftSegment.powerline-trail.value>>"
