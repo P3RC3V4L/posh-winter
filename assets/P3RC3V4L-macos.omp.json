@@ -3,6 +3,8 @@
   "palette": {
     "defaultFG": "#cccccc",
     "defaultBG": "#0c0c0c",
+    "rootBG": "#ffc5ca",
+    "rootFG": "#ff0000",
     "yellow": "#ffeb95",
     "blue": "#007ACC",
     "orange": "#e95420",
@@ -21,15 +23,14 @@
     "dev": "p:palegreen",
     "staging": "p:paleblue",
     "uat": "p:yellow",
-    "prod": "p:redNotice",
+    "prod": "p:redNotice"
+,
     "osBG": "#e6ecf1",
-    "osFG": "#4fa2ec",
-    "rootBG": "p:white",
-    "rootFG": "#ff0000",
+    "osFG": "#3d7ceb",
     "pathBG": "#5265c5",
     "pathSeparator": "p:midGray",
     "pathFG": "p:white",
-    "memoryBG": "p:blue"
+    "memoryBG": "#0c6d07"
   },
   "blocks": [
     {
@@ -67,9 +68,9 @@
         {
           "background": "p:rootBG",
           "foreground": "p:rootFG",
-          "trailing_diamond": "\ue0bc",
+          "powerline_symbol": "\ue0bc",
           "style": "powerline",
-          "template": " \uf292 ",
+          "template": "\uf292",
           "type": "root"
         },
         {
@@ -87,7 +88,7 @@
             "folder_separator_icon": "\ue0ba\ue0bc"
           },
           "style": "powerline",
-          "template": " {{ .Path }}",
+          "template": " {{ .Path }} ",
           "type": "path"
         },
         {

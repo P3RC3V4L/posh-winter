@@ -1,8 +1,6 @@
     "redNotice": "p:error",
     "osBG": "p:defaultFG",
     "osFG": "p:blue",
-    "rootBG": "p:redNotice",
-    "rootFG": "p:yellow",
     "pathBG": "p:blue",
     "pathSeparator": "p:midGray",
     "pathFG": "p:white",

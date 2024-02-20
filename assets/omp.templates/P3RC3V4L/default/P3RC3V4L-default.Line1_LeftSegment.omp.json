@@ -1,9 +1,9 @@
         {
           "background": "p:rootBG",
           "foreground": "p:rootFG",
-          "trailing_diamond": "<<.\Line1_LeftSegment.powerline-trail.value>>",
+          "powerline_symbol": "<<.\Line1_LeftSegment.powerline-trail.value>>",
           "style": "powerline",
-          "template": " \uf292 ",
+          "template": "\uf292",
           "type": "root"
         },
         {
@@ -21,7 +21,7 @@
             "folder_separator_icon": "<<.\Line1_LeftSegment.powerline-lead.value>><<.\Line1_LeftSegment.powerline-trail.value>>"
           },
           "style": "powerline",
-          "template": " {{ .Path }}",
+          "template": " {{ .Path }} ",
           "type": "path"
         },
         {
