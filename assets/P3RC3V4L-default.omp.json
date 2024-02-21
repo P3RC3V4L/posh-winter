@@ -81,7 +81,7 @@
             "home_icon": "<p:pathFG>\ueb06</> ",
             "style": "full",
             "mapped_locations": {
-              "~/git/Repos/*": "<p:pathFG>\uf09b</> ",
+              "~/git/Repos/*": "<p:pathFG>\ue708</> ",
               "C:/Windows/*": "<p:pathFG>\ue62a</> "
             },
             "cycle": [ "p:pathFG" ],
@@ -110,7 +110,7 @@
             "fetch_worktree_count": true
           },
           "style": "powerline",
-          "template": " {{ url .UpstreamIcon .UpstreamURL }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} ",
+          "template": " {{ url .HEAD .UpstreamURL }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} ",
           "type": "git"
         },
         {

@@ -12,12 +12,29 @@ function Build-OmpTheme
         [String] $Root = $env:POSH_THEMES_PATH
     )
 
+    Write-Verbose("`$Theme   = $Theme")
+    Write-Verbose("`$Variant = $Variant")
+    Write-Verbose("`$Root    = $Root")
+
+    $themeFolder = Join-Path $Root 'omp.templates' $Theme
+
+    if ($Variant -match '[\*\?]')
+    {
+        $resultThemes = [System.Collections.ArrayList]@()
+        foreach ($v in Get-ChildItem $themeFolder -Filter $Variant -Directory)
+        {
+            Write-Debug($Theme)
+            $r = Build-OmpTheme $Theme $v.Name -Root $Root
+            $idx = $resultThemes.Add($r)
+        }
+        Write-Host("All variants of $Theme theme are READY:")
+        return Out-String -InputObject $resultThemes
+    }
     Write-Host("Building theme: $Theme-$Variant...")
 
     $resultTheme = "$Theme-$Variant.omp.json"
     $resultTheme = Join-Path $Root $resultTheme 
 
-    $themeFolder = Join-Path $Root 'omp.templates' $Theme
     $themeTemplate = Join-Path $themeFolder "$Theme.omp.template"
 
     $variantFolder = Join-Path $themeFolder $Variant
