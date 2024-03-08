@@ -216,7 +216,7 @@
           "leading_diamond": "<<.\Line1_RightSegment.powerline-lead.value>>",
           "style": "diamond",
           "display_mode": "always",
-          "template": "{{ if .Venv }}\ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ .Venv }} {{ .Full }}{{ end }}{{ end }} ",
+          "template": "{{ if .Env.CONDA_DEFAULT_ENV }}\ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ .Env.CONDA_DEFAULT_ENV }} {{ .Full }}{{ end }}{{ end }} ",
           "trailing_diamond": "<<.\Line1_RightSegment.powerline-trail.value>>",
           "type": "python"
         },
