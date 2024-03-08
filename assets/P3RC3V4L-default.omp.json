@@ -373,9 +373,9 @@
           "leading_diamond": "\ue0ba",
           "style": "diamond",
           "display_mode": "always",
-          "template": "{{ if .Env.CONDA_DEFAULT_ENV }}\ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ .Env.CONDA_DEFAULT_ENV }} {{ .Full }}{{ end }}{{ end }} ",
+          "template": "{{ if .Env.CONDA_DEFAULT_ENV }}\ue235 {{ .Env.CONDA_DEFAULT_ENV }}{{ end }} ",
           "trailing_diamond": "\ue0bc",
-          "type": "python"
+          "type": "text"
         },
         {
           "background": "#b9bbbf",
