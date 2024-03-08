@@ -61,16 +61,8 @@
             "windows": "\ue62a"
           },
           "style": "diamond",
-          "template": "{{ if .WSL }}WSL at {{ end }}{{.Icon}} ",
+          "template": "{{ if .WSL }}WSL at {{ end }}{{.Icon}} {{ if .Root }}<p:rootBG>\uf132</>{{ end }}",
           "type": "os"
-        },
-        {
-          "background": "p:rootBG",
-          "foreground": "p:rootFG",
-          "powerline_symbol": "\ue0bc",
-          "style": "powerline",
-          "template": "\uf132",
-          "type": "root"
         },
         {
           "background": "p:pathBG",
@@ -370,9 +362,10 @@
           "foreground": "#FFE873",
           "leading_diamond": "\ue0be",
           "style": "diamond",
-          "template": "\ue235  {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}",
+          "display_mode": "always",
+          "template": "{{ if .Env.CONDA_DEFAULT_ENV }}\ue235 {{ .Env.CONDA_DEFAULT_ENV }}{{ end }} ",
           "trailing_diamond": "\ue0b8",
-          "type": "python"
+          "type": "text"
         },
         {
           "background": "#b9bbbf",

@@ -1,12 +1,4 @@
         {
-          "background": "p:rootBG",
-          "foreground": "p:rootFG",
-          "powerline_symbol": "<<.\Line1_LeftSegment.powerline-trail.value>>",
-          "style": "powerline",
-          "template": "\uf132",
-          "type": "root"
-        },
-        {
           "background": "p:pathBG",
           "foreground": "p:pathSeparator",
           "powerline_symbol": "<<.\Line1_LeftSegment.powerline-trail.value>>",
