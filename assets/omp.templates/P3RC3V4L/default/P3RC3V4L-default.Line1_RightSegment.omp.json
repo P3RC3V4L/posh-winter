@@ -215,7 +215,8 @@
           "foreground": "#FFE873",
           "leading_diamond": "<<.\Line1_RightSegment.powerline-lead.value>>",
           "style": "diamond",
-          "template": "\ue235  {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}",
+          "display_mode": "always",
+          "template": "{{ if .Venv }}\ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ .Venv }} {{ .Full }}{{ end }}{{ end }} ",
           "trailing_diamond": "<<.\Line1_RightSegment.powerline-trail.value>>",
           "type": "python"
         },
