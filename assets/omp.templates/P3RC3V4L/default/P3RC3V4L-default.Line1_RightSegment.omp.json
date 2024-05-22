@@ -71,15 +71,6 @@
           "type": "crystal"
         },
         {
-          "background": "#d2d2d2",
-          "foreground": "#01a300",
-          "leading_diamond": "<<.\Line1_RightSegment.powerline-lead.value>>",
-          "style": "diamond",
-          "template": "<#2829b2>\ue61e</> <#be1818>\ue61d</>  cmake {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} ",
-          "trailing_diamond": "<<.\Line1_RightSegment.powerline-trail.value>>",
-          "type": "cmake"
-        },
-        {
           "background": "#e1e8e9",
           "foreground": "#055b9c",
           "leading_diamond": "<<.\Line1_RightSegment.powerline-lead.value>>",
