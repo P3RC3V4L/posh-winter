@@ -11,7 +11,6 @@
           "type": "text"
         },
         {
-          "background": "p:osBG",
           "background_templates": [
             "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
             "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",

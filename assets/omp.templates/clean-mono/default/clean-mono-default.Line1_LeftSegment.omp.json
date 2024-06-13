@@ -1,5 +1,4 @@
         {
-          "background": "p:rootBG",
           "foreground": "p:rootFG",
           "powerline_symbol": "\ue0bc",
           "style": "plain",
@@ -7,7 +6,6 @@
           "type": "root"
         },
         {
-          "background": "p:pathBG",
           "foreground": "p:pathSeparator",
           "properties": {
             "home_icon": "<p:white>\ueb06</> ",
@@ -42,7 +40,6 @@
           "type": "git"
         },
         {
-          "background": "p:defaultBG",
           "foreground": "p:defaultFG",
           "properties": {
             "always_enabled": true

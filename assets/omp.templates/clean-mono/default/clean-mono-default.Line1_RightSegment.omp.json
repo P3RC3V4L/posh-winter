@@ -1,13 +1,11 @@
         {
-          "background": "p:osBG",
           "foreground": "p:osFG",
           "style": "plain",
           "template": "<p:dark>\u2329</> {{ .Name }} \uf489 ",
           "type": "shell"
         },
         {
-          "background": "p:memoryBG",
-          "foreground": "#ffffff",
+          "foreground": "p:defaultFG",
           "style": "plain",
           "template": "<p:dark>\u2329</> {{ round .PhysicalPercentUsed .Precision }}% \ue266 ",
           "type": "sysinfo"
