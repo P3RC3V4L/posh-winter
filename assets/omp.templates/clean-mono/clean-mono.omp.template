@@ -14,7 +14,7 @@
     {
       "alignment": "right",
       "overflow": "break",
-      "filler": "<,transparent>\u2500</>",
+      "filler": "<p:dark,transparent>\u2500</>",
       "segments": [
         <<.\Line1_Right.omp.template>>
       ],
