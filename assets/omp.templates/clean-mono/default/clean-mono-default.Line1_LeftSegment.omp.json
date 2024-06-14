@@ -21,12 +21,12 @@
           "type": "path"
         },
         {
-          "foreground": "#addb67",
+          "foreground": "p:ok",
           "foreground_templates": [
-            "{{ if or (.Working.Changed) (.Staging.Changed) }}#e4cf6a{{ end }}",
-            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#f78c6c{{ end }}",
-            "{{ if gt .Ahead 0 }}#c792ea{{ end }}",
-            "{{ if gt .Behind 0 }}#c792ea{{ end }}"
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}p:warning{{ end }}",
+            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:error{{ end }}",
+            "{{ if gt .Ahead 0 }}p:plum{{ end }}",
+            "{{ if gt .Behind 0 }}p:plum{{ end }}"
           ],
           "properties": {
             "branch_icon": "\ue725 ",

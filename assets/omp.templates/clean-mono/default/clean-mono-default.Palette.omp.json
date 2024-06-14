@@ -1,6 +1,3 @@
-    "osBG": "p:yellow",
-    "osFG": "p:blue",
-    "pathBG": "p:blue",
-    "pathSeparator": "p:midGray",
-    "pathFG": "p:white",
-    "memoryBG": "p:plum"
+"osFG": "p:white",
+"pathSeparator": "p:midGray",
+"pathFG": "p:light"
