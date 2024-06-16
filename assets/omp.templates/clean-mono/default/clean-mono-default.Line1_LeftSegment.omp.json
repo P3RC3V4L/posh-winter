@@ -17,7 +17,7 @@
             "folder_separator_icon": "/"
           },
           "style": "plain",
-          "template": "{{ .Path }} <p:dark>\u232a</>",
+          "template": "{{ .Path }} <p:dark>\u3009</>",
           "type": "path"
         },
         {
