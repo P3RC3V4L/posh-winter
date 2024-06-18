@@ -37,7 +37,7 @@
         {
           "foreground": "#5a7a94",
           "style": "plain",
-          "template": "<p:dark>\u276c</>  cds {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue311 ",
+          "template": "<p:dark>\u276c</> cds {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue311 ",
           "type": "cds"
         },
         {
@@ -55,7 +55,7 @@
         {
           "foreground": "#0d6da8",
           "style": "plain",
-          "template": "<p:dark>\u276c</>  {{ if .Unsupported }}\uf071{{ else }}{{ .Full }}{{ end }} \ue77f ",
+          "template": "<p:dark>\u276c</> {{ if .Unsupported }}\uf071{{ else }}{{ .Full }}{{ end }} \ue77f ",
           "type": "dotnet"
         },
         {
@@ -85,13 +85,13 @@
         {
           "foreground": "#945bb3",
           "style": "plain",
-          "template": "<p:dark>\u276c</><#ca3c34>\ue624</> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}  ",
+          "template": "<p:dark>\u276c</> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} <#ca3c34>\ue624</> ",
           "type": "julia"
         },
         {
           "foreground": "#906cff",
           "style": "plain",
-          "template": "<p:dark>\u276c</>K {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}  ",
+          "template": "<p:dark>\u276c</> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} K ",
           "type": "kotlin"
         },
         {
@@ -138,13 +138,13 @@
         {
           "foreground": "#FFE873",
           "style": "plain",
-          "template": "<p:dark>\u276c</>  {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }} \ue235 ",
+          "template": "<p:dark>\u276c</> {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }} \ue235 ",
           "type": "python"
         },
         {
           "foreground": "#b9bbbf",
           "style": "plain",
-          "template": "<p:dark>\u276c</>{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} R ",
+          "template": "<p:dark>\u276c</> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} R ",
           "type": "r"
         },
         {

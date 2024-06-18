@@ -57,7 +57,7 @@
           "foreground": "#100e23",
           "leading_diamond": "<<.\Line1_RightSegment.powerline-lead.value>>",
           "style": "diamond",
-          "template": "\ue311  cds {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} ",
+          "template": "\ue311 cds {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} ",
           "trailing_diamond": "<<.\Line1_RightSegment.powerline-trail.value>>",
           "type": "cds"
         },
@@ -84,7 +84,7 @@
           "foreground": "#0d6da8",
           "leading_diamond": "<<.\Line1_RightSegment.powerline-lead.value>>",
           "style": "diamond",
-          "template": "\ue77f  {{ if .Unsupported }}\uf071{{ else }}{{ .Full }}{{ end }} ",
+          "template": "\ue77f {{ if .Unsupported }}\uf071{{ else }}{{ .Full }}{{ end }} ",
           "trailing_diamond": "<<.\Line1_RightSegment.powerline-trail.value>>",
           "type": "dotnet"
         },

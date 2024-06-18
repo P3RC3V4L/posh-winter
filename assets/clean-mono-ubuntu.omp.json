@@ -272,7 +272,7 @@
         {
           "foreground": "#FFE873",
           "style": "plain",
-          "template": "<p:dark>\u276c</>  {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }} \ue235 ",
+          "template": "<p:dark>\u276c</> {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }} \ue235 ",
           "type": "python"
         },
         {
