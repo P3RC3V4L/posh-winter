@@ -182,12 +182,6 @@
           "type": "crystal"
         },
         {
-          "foreground": "#01a300",
-          "style": "plain",
-          "template": "<p:dark>\u276c</><#2829b2>\ue61e</> <#be1818>\ue61d</>  cmake {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}  ",
-          "type": "cmake"
-        },
-        {
           "foreground": "#055b9c",
           "style": "plain",
           "template": "<p:dark>\u276c</> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue798 ",
@@ -279,13 +273,13 @@
         {
           "foreground": "#FFE873",
           "style": "plain",
-          "template": "<p:dark>\u276c</>  {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}\ue235 ",
+          "template": "<p:dark>\u276c</>  {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }} \ue235 ",
           "type": "python"
         },
         {
           "foreground": "#b9bbbf",
           "style": "plain",
-          "template": "<p:dark>\u276c</>R {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}  ",
+          "template": "<p:dark>\u276c</>{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} R ",
           "type": "r"
         },
         {
