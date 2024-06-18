@@ -7,7 +7,7 @@
             "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
           ],
           "style": "plain",
-          "template": "{{ if .Env.P6_ENV }}    </>{{ end }}\u256d\u2500",
+          "template": "{{ if .Env.P6_ENV }}    </>{{ end }}\u256d\u2574",
           "type": "text"
         },
         {
@@ -22,6 +22,6 @@
             "windows": "\ue62a"
           },
           "style": "plain",
-          "template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}} <p:dark>\u232a</>",
+          "template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}} <p:dark>\u276d</> ",
           "type": "os"
         }

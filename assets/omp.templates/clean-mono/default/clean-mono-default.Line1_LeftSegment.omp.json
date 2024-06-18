@@ -8,7 +8,7 @@
         {
           "foreground": "p:pathSeparator",
           "properties": {
-            "home_icon": "<p:white>\ueb06</> ",
+            "home_icon": "<p:ok>\ueb06</>",
             "style": "full",
             "mapped_locations": {
               <<.\path-mapped_locations.value>>
@@ -17,7 +17,7 @@
             "folder_separator_icon": "/"
           },
           "style": "plain",
-          "template": "{{ .Path }} <p:dark>\u3009</>",
+          "template": "{{ .Path }} <p:dark>\u276d</> ",
           "type": "path"
         },
         {
