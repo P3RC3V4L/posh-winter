@@ -73,7 +73,7 @@
             "home_icon": "<p:ok>\ueb06</>",
             "style": "full",
             "mapped_locations": {
-              "~/git/*": "<p:ok>\uf09b</> "
+              "~/git/*": "<p:ok>\uf09b</>"
             },
             "right_format": "<p:white>%s</>",
             "folder_separator_icon": "/"
