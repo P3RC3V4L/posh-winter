@@ -12,7 +12,6 @@
     "palegreen": "#6ad865",
     "paleblue": "#329ee6",
     "light": "#d6deeb",
-    "dark": "#575656",
     "night": "#1a1a1a",
     "rootBG": "#ff0000",
     "rootFG": "p:white",
@@ -25,9 +24,10 @@
     "uat": "p:yellow",
     "prod": "p:redNotice",
 
-"osFG": "p:white",
-"pathSeparator": "p:midGray",
-"pathFG": "p:light"
+    "dark": "#50606F",
+    "osFG": "p:white",
+    "pathSeparator": "p:midGray",
+    "pathFG": "p:light"
   },
   "blocks": [
     {

@@ -1,3 +1,4 @@
-"osFG": "p:white",
-"pathSeparator": "p:midGray",
-"pathFG": "p:light"
+    "dark": "#50606F",
+    "osFG": "p:white",
+    "pathSeparator": "p:midGray",
+    "pathFG": "p:light"
