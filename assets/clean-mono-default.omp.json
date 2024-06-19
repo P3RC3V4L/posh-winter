@@ -76,7 +76,7 @@
               "~/git/Repos/*": "<p:ok>\uf09b</>",
               "C:/Windows/*": "<p:ok>\ue62a</>"
             },
-            "right_format": "<p:white>%s</>",
+            "right_format": "<p:white><b>%s</b></>",
             "folder_separator_icon": "/"
           },
           "style": "plain",

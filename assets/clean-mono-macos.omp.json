@@ -75,7 +75,7 @@
             "mapped_locations": {
               "~/git/*": "<p:ok>\uf09b</>"
             },
-            "right_format": "<p:white>%s</>",
+            "right_format": "<p:white><b>%s</b></>",
             "folder_separator_icon": "/"
           },
           "style": "plain",
