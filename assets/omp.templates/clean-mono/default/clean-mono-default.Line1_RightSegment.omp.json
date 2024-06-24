@@ -8,6 +8,9 @@
           "foreground": "p:defaultFG",
           "style": "plain",
           "template": "<p:dark>\u276c</> {{ round .PhysicalPercentUsed .Precision }}% \ue266 ",
+          "properties": {
+            "precision": 0
+          },
           "type": "sysinfo"
         },
         {

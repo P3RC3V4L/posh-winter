@@ -161,6 +161,9 @@
           "leading_diamond": "\ue0be",
           "style": "diamond",
           "template": "\ue266 {{ round .PhysicalPercentUsed .Precision }}% ",
+          "properties": {
+            "precision": 0
+          },
           "trailing_diamond": "\ue0b8",
           "type": "sysinfo"
         },
@@ -205,7 +208,7 @@
           "foreground": "#100e23",
           "leading_diamond": "\ue0be",
           "style": "diamond",
-          "template": "\ue311  cds {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} ",
+          "template": "\ue311 cds {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} ",
           "trailing_diamond": "\ue0b8",
           "type": "cds"
         },
@@ -232,7 +235,7 @@
           "foreground": "#0d6da8",
           "leading_diamond": "\ue0be",
           "style": "diamond",
-          "template": "\ue77f  {{ if .Unsupported }}\uf071{{ else }}{{ .Full }}{{ end }} ",
+          "template": "\ue77f {{ if .Unsupported }}\uf071{{ else }}{{ .Full }}{{ end }} ",
           "trailing_diamond": "\ue0b8",
           "type": "dotnet"
         },

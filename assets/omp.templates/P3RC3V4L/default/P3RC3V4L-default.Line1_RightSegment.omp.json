@@ -13,6 +13,9 @@
           "leading_diamond": "<<.\Line1_RightSegment.powerline-lead.value>>",
           "style": "diamond",
           "template": "\ue266 {{ round .PhysicalPercentUsed .Precision }}% ",
+          "properties": {
+            "precision": 0
+          },
           "trailing_diamond": "<<.\Line1_RightSegment.powerline-trail.value>>",
           "type": "sysinfo"
         },
