@@ -28,7 +28,7 @@
     "osBG": "p:yellow",
     "osFG": "p:blue",
     "pathBG": "p:blue",
-    "pathSeparator": "p:midGray",
+    "pathSeparator": "p:night",
     "pathFG": "p:white",
     "memoryBG": "p:plum"
   },
@@ -77,7 +77,7 @@
               "C:/Windows/*": "<p:pathFG>\ue62a</> "
             },
             "cycle": [ "p:pathFG" ],
-            "folder_separator_icon": "\ue0be\ue0b8"
+            "folder_separator_icon": "<b>\\</b>"
           },
           "style": "powerline",
           "template": " {{ .Path }} ",

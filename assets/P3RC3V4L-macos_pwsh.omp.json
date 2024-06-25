@@ -28,7 +28,7 @@
     "osBG": "#e6ecf1",
     "osFG": "#3d7ceb",
     "pathBG": "p:blue",
-    "pathSeparator": "p:midGray",
+    "pathSeparator": "p:night",
     "pathFG": "p:white",
     "memoryBG": "p:plum"
   },
@@ -76,7 +76,7 @@
               "~/git/*": "<p:pathFG>\uf09b</> "
             },
             "cycle": [ "p:pathFG" ],
-            "folder_separator_icon": "\ue0ba\ue0bc"
+            "folder_separator_icon": "<b>/</b>"
           },
           "style": "powerline",
           "template": " {{ .Path }} ",
