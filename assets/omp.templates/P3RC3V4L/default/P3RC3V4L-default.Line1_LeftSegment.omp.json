@@ -9,7 +9,7 @@
               <<.\path-mapped_locations.value>>
             },
             "cycle": [ "p:pathFG" ],
-            "folder_separator_icon": "<<.\Line1_LeftSegment.powerline-lead.value>><<.\Line1_LeftSegment.powerline-trail.value>>"
+            "folder_separator_icon": "<<.\Path-separator.omp.template>>"
           },
           "style": "powerline",
           "template": " {{ .Path }} ",
