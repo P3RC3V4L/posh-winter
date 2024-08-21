@@ -41,7 +41,7 @@
             "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
           ],
           "style": "plain",
-          "template": "{{ if .Env.P6_ENV }}   </>{{ end }}\u256d\u2574",
+          "template": "{{ if .Env.P6_ENV }}   {{ end }}\u256d\u2574",
           "type": "text"
         },
         {
