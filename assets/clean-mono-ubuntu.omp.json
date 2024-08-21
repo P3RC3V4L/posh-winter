@@ -34,7 +34,6 @@
       "alignment": "left",
       "segments": [
         {
-          "foreground": "p:dark",
           "foreground_templates": [
             "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
             "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
@@ -56,7 +55,7 @@
             "windows": "\ue62a"
           },
           "style": "plain",
-          "template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}} <p:dark>\u276d</> ",
+          "template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}} \u276d ",
           "type": "os"
         },
         {
@@ -329,7 +328,6 @@
         }
 ,
         {
-          "foreground": "p:ok",
           "foreground_templates": [
             "{{ if gt .Code 0 }}p:warning{{ end }}",
             "{{ if lt .Code 0 }}p:error{{ end }}"
