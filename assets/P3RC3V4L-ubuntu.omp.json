@@ -27,7 +27,7 @@
     "osBG": "p:white",
     "osFG": "p:orange",
     "pathBG": "p:plum",
-    "pathSeparator": "p:midGray",
+    "pathSeparator": "p:night",
     "pathFG": "p:white",
     "memoryBG": "p:orange"
   },
@@ -75,7 +75,7 @@
               "~/Projects/*": "<p:pathFG>\ue708</> "
             },
             "cycle": [ "p:pathFG" ],
-            "folder_separator_icon": "\ue0ba\ue0bc"
+            "folder_separator_icon": "<b>/</b>"
           },
           "style": "powerline",
           "template": " {{ .Path }} ",
@@ -160,6 +160,9 @@
           "leading_diamond": "\ue0be",
           "style": "diamond",
           "template": "\ue266 {{ round .PhysicalPercentUsed .Precision }}% ",
+          "properties": {
+            "precision": 0
+          },
           "trailing_diamond": "\ue0b8",
           "type": "sysinfo"
         },
@@ -204,7 +207,7 @@
           "foreground": "#100e23",
           "leading_diamond": "\ue0be",
           "style": "diamond",
-          "template": "\ue311  cds {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} ",
+          "template": "\ue311 cds {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} ",
           "trailing_diamond": "\ue0b8",
           "type": "cds"
         },
@@ -231,7 +234,7 @@
           "foreground": "#0d6da8",
           "leading_diamond": "\ue0be",
           "style": "diamond",
-          "template": "\ue77f  {{ if .Unsupported }}\uf071{{ else }}{{ .Full }}{{ end }} ",
+          "template": "\ue77f {{ if .Unsupported }}\uf071{{ else }}{{ .Full }}{{ end }} ",
           "trailing_diamond": "\ue0b8",
           "type": "dotnet"
         },
