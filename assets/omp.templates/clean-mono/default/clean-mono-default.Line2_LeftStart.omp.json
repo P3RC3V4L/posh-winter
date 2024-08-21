@@ -1,9 +1,6 @@
         {
           "foreground": "p:dark",
           "foreground_templates": [
-            "{{ if .Env.P6_ENV }}black{{ end }}"
-          ],
-          "background_templates": [
             "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
             "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
             "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
