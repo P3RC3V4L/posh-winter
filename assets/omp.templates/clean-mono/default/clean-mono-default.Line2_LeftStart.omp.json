@@ -7,6 +7,6 @@
             "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
           ],
           "style": "plain",
-          "template": "{{ if eq .Env.P6_ENV \"prod\" }} PRD\u2570<p:prod,transparent>\u2574</>{{ else if eq .Env.P6_ENV \"uat\" }} UAT\u2570<p:uat,transparent>\u2574</>{{ else if eq .Env.P6_ENV \"staging\" }} STG\u2570<p:staging,transparent>\u2574</>{{ else if eq .Env.P6_ENV \"dev\" }} DEV\u2570<p:dev,transparent>\u2574</>{{ else }}\u2570\u2574{{ end }}",
+          "template": "{{ if eq .Env.P6_ENV \"prod\" }}PRD\u2570<p:prod,transparent>\u2574</>{{ else if eq .Env.P6_ENV \"uat\" }}UAT\u2570<p:uat,transparent>\u2574</>{{ else if eq .Env.P6_ENV \"staging\" }}STG\u2570<p:staging,transparent>\u2574</>{{ else if eq .Env.P6_ENV \"dev\" }}DEV\u2570<p:dev,transparent>\u2574</>{{ else }}\u2570\u2574{{ end }}",
           "type": "text"
         }
