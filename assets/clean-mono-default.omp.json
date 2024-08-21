@@ -332,6 +332,7 @@
         }
 ,
         {
+          "foreground": "p:ok",
           "foreground_templates": [
             "{{ if gt .Code 0 }}p:warning{{ end }}",
             "{{ if lt .Code 0 }}p:error{{ end }}"
