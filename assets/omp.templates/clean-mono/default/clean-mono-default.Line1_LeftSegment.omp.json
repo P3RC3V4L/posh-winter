@@ -21,11 +21,12 @@
           "type": "path"
         },
         {
+          "foreground": "p:dark",
           "foreground_templates": [
             "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
             "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
             "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
-            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ else }}p:dark{{ end }}"
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
           ],
           "style": "plain",
           "template": "\u276d ",
@@ -73,13 +74,14 @@
           "type": "exit"
         },
         {
+          "foreground": "p:dark",
           "foreground_templates": [
             "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
             "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
             "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
-            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ else }}p:dark{{ end }}"
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
           ],
           "style": "plain",
-          "template": "\u276d \u2576",
+          "template": "\u276d <p:dark>\u2576</>",
           "type": "text"
         }
