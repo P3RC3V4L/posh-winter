@@ -1,360 +1,641 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
   "palette": {
-    "defaultFG": "#cccccc",
-    "defaultBG": "#0c0c0c",
-    "yellow": "#ffeb95",
     "blue": "#007ACC",
-    "orange": "#e95420",
-    "white": "#ffffff",
-    "plum": "#c792ea",
-    "midGray": "#aaaaaa",
-    "palegreen": "#6ad865",
-    "paleblue": "#329ee6",
+    "dark": "#50606F",
+    "defaultBG": "#0c0c0c",
+    "defaultFG": "#cccccc",
+    "dev": "p:palegreen",
+    "error": "#f78c6c",
     "light": "#d6deeb",
+    "midGray": "#aaaaaa",
     "night": "#1a1a1a",
+    "ok": "#addb67",
+    "orange": "#e95420",
+    "osFG": "p:white",
+    "paleblue": "#329ee6",
+    "palegreen": "#6ad865",
+    "pathFG": "p:light",
+    "pathSeparator": "p:midGray",
+    "plum": "#c792ea",
+    "prod": "p:redNotice",
+    "redNotice": "p:error",
     "rootBG": "#ff0000",
     "rootFG": "p:white",
-    "ok": "#addb67",
-    "warning": "#e4cf6a",
-    "error": "#f78c6c",
-    "redNotice": "p:error",
-    "dev": "p:palegreen",
     "staging": "p:paleblue",
     "uat": "p:yellow",
-    "prod": "p:redNotice",
-
-    "dark": "#50606F",
-    "osFG": "p:white",
-    "pathSeparator": "p:midGray",
-    "pathFG": "p:light"
+    "warning": "#e4cf6a",
+    "white": "#ffffff",
+    "yellow": "#ffeb95"
   },
+  "console_title_template": "{{ .Folder }}{{ if .Root }} (admin){{ end }}",
   "blocks": [
     {
+      "type": "prompt",
       "alignment": "left",
       "segments": [
         {
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": "{{ if .Env.P6_ENV }}   {{ end }}\u256d\u2574",
           "foreground": "p:dark",
+          "type": "text",
+          "style": "plain",
           "foreground_templates": [
             "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
             "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
             "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
             "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
-          ],
-          "style": "plain",
-          "template": "{{ if .Env.P6_ENV }}   {{ end }}\u256d\u2574",
-          "type": "text"
+          ]
         },
         {
-          "foreground_templates": [
-            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
-            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
-            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
-            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
-          ],
           "properties": {
+            "cache_duration": "none",
             "windows": "\ue62a"
           },
+          "template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}} ❭ ",
+          "foreground": "p:dark",
+          "type": "os",
           "style": "plain",
-          "template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}} \u276d ",
-          "type": "os"
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ]
         },
         {
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": "\uf132",
           "foreground": "p:rootFG",
           "powerline_symbol": "\ue0bc",
-          "style": "plain",
-          "template": "\uf132",
-          "type": "root"
+          "type": "root",
+          "style": "plain"
         },
         {
-          "foreground": "p:pathSeparator",
           "properties": {
+            "cache_duration": "none",
+            "folder_separator_icon": "/",
             "home_icon": "<p:ok>\ueb06</>",
-            "style": "full",
             "mapped_locations": {
-              "~/git/Repos/*": "<p:ok>\uf09b</>",
-              "C:/Windows/*": "<p:ok>\ue62a</>"
+              "C:/Windows/*": "<p:ok>\ue62a</>",
+              "~/git/Repos/*": "<p:ok>\uf09b</>"
             },
             "right_format": "<p:white><b>%s</b></>",
-            "folder_separator_icon": "/"
+            "style": "full"
           },
-          "style": "plain",
-          "template": "{{ .Path }} <p:dark>\u276d</> ",
-          "type": "path"
+          "template": "{{ .Path }} ",
+          "foreground": "p:pathSeparator",
+          "type": "path",
+          "style": "plain"
         },
         {
-          "foreground": "p:ok",
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": "❭ ",
+          "type": "text",
+          "style": "plain",
           "foreground_templates": [
-            "{{ if or (.Working.Changed) (.Staging.Changed) }}p:warning{{ end }}",
-            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:error{{ end }}",
-            "{{ if gt .Ahead 0 }}p:plum{{ end }}",
-            "{{ if gt .Behind 0 }}p:plum{{ end }}"
-          ],
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ else }}p:dark{{ end }}"
+          ]
+        },
+        {
           "properties": {
             "branch_icon": "\ue725 ",
+            "cache_duration": "none",
             "fetch_stash_count": true,
             "fetch_status": true,
             "fetch_upstream_icon": true,
             "fetch_worktree_count": true
           },
-          "style": "plain",
           "template": "{{ url .HEAD .UpstreamURL }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} ",
-          "type": "git"
-        },
-        {
-          "foreground": "p:defaultFG",
-          "properties": {
-            "always_enabled": true
-          },
+          "foreground": "p:ok",
+          "type": "git",
           "style": "plain",
-          "template": "<p:dark>[</>{{ .FormattedMs }}<p:dark>]</>",
-          "type": "executiontime"
+          "foreground_templates": [
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}p:warning{{ end }}",
+            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:error{{ end }}",
+            "{{ if gt .Ahead 0 }}p:plum{{ end }}",
+            "{{ if gt .Behind 0 }}p:plum{{ end }}"
+          ]
         },
         {
+          "properties": {
+            "always_enabled": true,
+            "cache_duration": "none"
+          },
+          "template": "<p:dark>[</>{{ .FormattedMs }}<p:dark>]</>",
+          "foreground": "p:defaultFG",
+          "type": "executiontime",
+          "style": "plain"
+        },
+        {
+          "properties": {
+            "always_enabled": true,
+            "cache_duration": "none"
+          },
+          "template": " {{ .Code }} ",
+          "type": "exit",
+          "style": "plain",
           "foreground_templates": [
             "{{ if eq .Code 0 }}p:dark{{ end }}",
             "{{ if gt .Code 0 }}p:warning{{ end }}",
             "{{ if lt .Code 0 }}p:error{{ end }}"
-          ],
+          ]
+        },
+        {
           "properties": {
-            "always_enabled": true
+            "cache_duration": "none"
           },
+          "template": "❭ ",
+          "type": "text",
           "style": "plain",
-          "template": "{{ if eq .Code 0 }}\u2576{{ else }} {{ .Code }} {{ end }}",
-          "type": "exit"
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ else }}p:dark{{ end }}"
+          ]
         }
-
-      ],
-      "type": "prompt"
+      ]
     },
     {
+      "type": "prompt",
       "alignment": "right",
-      "overflow": "break",
       "filler": "<p:dark,transparent>\u2500</>",
+      "overflow": "break",
       "segments": [
         {
-          "foreground": "p:osFG",
-          "style": "plain",
-          "template": "<p:dark>\u2574\u276c</> {{ .Name }} \uf489 ",
-          "type": "shell"
-        },
-        {
-          "foreground": "p:defaultFG",
-          "style": "plain",
-          "template": "<p:dark>\u276c</> {{ round .PhysicalPercentUsed .Precision }}% \ue266 ",
           "properties": {
-            "precision": 0
+            "cache_duration": "none"
           },
-          "type": "sysinfo"
-        },
-        {
-          "foreground": "#ce092f",
-          "style": "plain",
-          "template": "<p:dark>\u276c</> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue753 ",
-          "type": "angular"
-        },
-        {
-          "foreground": "#faa029",
-          "style": "plain",
-          "template": "<p:dark>\u276c</> {{ .Profile }}{{ if .Region }}@{{ .Region }}{{ end }} \ue7ad ",
-          "type": "aws"
-        },
-        {
-          "foreground": "#337bb6",
-          "style": "plain",
-          "template": "<p:dark>\u276c</> {{ .EnvironmentName }} \uFD03 ",
-          "type": "az"
-        },
-        {
-          "foreground": "#5398c2",
-          "style": "plain",
-          "template": "<p:dark>\u276c</> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \uf104<#f5bf45>\uf0e7</>\uf105 ",
-          "type": "azfunc"
-        },
-        {
-          "foreground": "#5a7a94",
-          "style": "plain",
-          "template": "<p:dark>\u276c</> cds {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue311 ",
-          "type": "cds"
-        },
-        {
-          "foreground": "p:midGray",
-          "style": "plain",
-          "template": "<p:dark>\u276c</> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \uE370 ",
-          "type": "crystal"
-        },
-        {
-          "foreground": "#055b9c",
-          "style": "plain",
-          "template": "<p:dark>\u276c</> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue798 ",
-          "type": "dart"
-        },
-        {
-          "foreground": "#0d6da8",
-          "style": "plain",
-          "template": "<p:dark>\u276c</> {{ if .Unsupported }}\uf071{{ else }}{{ .Full }}{{ end }} \ue77f ",
-          "type": "dotnet"
-        },
-        {
-          "foreground": "#06A4CE",
-          "style": "plain",
-          "template": "<p:dark>\u276c</> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue28e ",
-          "type": "flutter"
-        },
-        {
-          "foreground": "#06aad5",
-          "style": "plain",
-          "template": "<p:dark>\u276c</> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue626 ",
-          "type": "go"
-        },
-        {
-          "foreground": "#906cff",
-          "style": "plain",
-          "template": "<p:dark>\u276c</> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue61f ",
-          "type": "haskell"
-        },
-        {
-          "foreground": "#ec2729",
-          "style": "plain",
-          "template": "<p:dark>\u276c</> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue738 ",
-          "type": "java"
-        },
-        {
-          "foreground": "#945bb3",
-          "style": "plain",
-          "template": "<p:dark>\u276c</> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} <#ca3c34>\ue624</> ",
-          "type": "julia"
-        },
-        {
-          "foreground": "#906cff",
-          "style": "plain",
-          "template": "<p:dark>\u276c</> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} K ",
-          "type": "kotlin"
-        },
-        {
-          "foreground": "#316ce4",
-          "style": "plain",
-          "template": "<p:dark>\u276c</> {{.Context}} :: {{if .Namespace}}{{.Namespace}}{{else}}default{{end}} \uf308 ",
-          "type": "kubectl"
-        },
-        {
-          "foreground": "p:paleblue",
-          "style": "plain",
-          "template": "<p:dark>\u276c</> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue620 ",
-          "type": "lua"
-        },
-        {
-          "foreground": "#3C873A",
-          "properties": {
-            "fetch_package_manager": true,
-            "npm_icon": "<#cc3a3a>\ue71e</> ",
-            "yarn_icon": "<#348cba>\ue6a7</> "
-          },
-          "style": "plain",
-          "template": "<p:dark>\u276c</> {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} \ue718 ",
-          "type": "node"
-        },
-        {
-          "foreground": "#6488c0",
-          "style": "plain",
-          "template": "<p:dark>\u276c</>Nx {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}  ",
-          "type": "nx"
-        },
-        {
-          "foreground": "#ffffff",
-          "style": "plain",
-          "template": "<p:dark>\u276c</> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue769 ",
-          "type": "perl"
-        },
-        {
-          "foreground": "#787CB5",
-          "style": "plain",
-          "template": "<p:dark>\u276c</> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue73d ",
-          "type": "php"
-        },
-        {
-          "foreground": "#FFE873",
-          "style": "plain",
-          "template": "<p:dark>\u276c</> {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }} \ue235 ",
-          "type": "python"
-        },
-        {
-          "foreground": "#b9bbbf",
-          "style": "plain",
-          "template": "<p:dark>\u276c</> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} R ",
-          "type": "r"
-        },
-        {
-          "foreground": "#9c1006",
-          "style": "plain",
-          "template": "<p:dark>\u276c</> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue791 ",
-          "type": "ruby"
-        },
-        {
-          "foreground": "p:midGray",
-          "style": "plain",
-          "template": "<p:dark>\u276c</> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue7a8 ",
-          "type": "rust"
-        },
-        {
-          "foreground": "#fe562e",
-          "style": "plain",
-          "template": "<p:dark>\u276c</> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue755 ",
-          "type": "swift"
-        },
-        {
-          "foreground": "p:pathFG",
-          "properties": {
-            "time_format": "15:04:05"
-          },
-          "style": "plain",
-          "template": "<p:dark>\u276c</> {{ .CurrentDate | date .Format }} \ue641",
-          "type": "time"
-        }
-
-      ],
-      "type": "prompt"
-    },
-    {
-      "alignment": "left",
-      "newline": true,
-      "segments": [
-        {
+          "template": "\u2574❬ <p:osFG> {{ .Name }} \uf489 </>",
           "foreground": "p:dark",
+          "type": "shell",
+          "style": "plain",
           "foreground_templates": [
             "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
             "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
             "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
             "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
-          ],
-          "style": "plain",
-          "template": "{{ if eq .Env.P6_ENV \"prod\" }}PRD\u2570<p:prod,transparent>\u2574</>{{ else if eq .Env.P6_ENV \"uat\" }}UAT\u2570<p:uat,transparent>\u2574</>{{ else if eq .Env.P6_ENV \"staging\" }}STG\u2570<p:staging,transparent>\u2574</>{{ else if eq .Env.P6_ENV \"dev\" }}DEV\u2570<p:dev,transparent>\u2574</>{{ else }}\u2570\u2574{{ end }}",
-          "type": "text"
-        }
-,
+          ]
+        },
         {
+          "properties": {
+            "cache_duration": "none",
+            "precision": 0
+          },
+          "template": "❬ <p:defaultFG> {{ round .PhysicalPercentUsed .Precision }}% \ue266 </>",
+          "foreground": "p:dark",
+          "type": "sysinfo",
+          "style": "plain",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ]
+        },
+        {
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": "❬ <p:#ce092f> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue753 </>",
+          "foreground": "p:dark",
+          "type": "angular",
+          "style": "plain",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ]
+        },
+        {
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": "❬ <p:#faa029> {{ .Profile }}{{ if .Region }}@{{ .Region }}{{ end }} \ue7ad </>",
+          "foreground": "p:dark",
+          "type": "aws",
+          "style": "plain",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ]
+        },
+        {
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": "❬ <p:#337bb6> {{ .EnvironmentName }} \ufd03 </>",
+          "foreground": "p:dark",
+          "type": "az",
+          "style": "plain",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ]
+        },
+        {
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": "❬ <p:#5398c2> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \uf104<#f5bf45>\uf0e7</>\uf105 </>",
+          "foreground": "p:dark",
+          "type": "azfunc",
+          "style": "plain",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ]
+        },
+        {
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": "❬ <p:#5a7a94> cds {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue311 </>",
+          "foreground": "p:dark",
+          "type": "cds",
+          "style": "plain",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ]
+        },
+        {
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": "❬ <p:midGray> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue370 </>",
+          "foreground": "p:dark",
+          "type": "crystal",
+          "style": "plain",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ]
+        },
+        {
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": "❬ <p:#055b9c> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue798 </>",
+          "foreground": "p:dark",
+          "type": "dart",
+          "style": "plain",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ]
+        },
+        {
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": "❬ <p:#0d6da8> {{ if .Unsupported }}\uf071{{ else }}{{ .Full }}{{ end }} \ue77f </>",
+          "foreground": "p:dark",
+          "type": "dotnet",
+          "style": "plain",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ]
+        },
+        {
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": "❬ <p:#06A4CE> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue28e </>",
+          "foreground": "p:dark",
+          "type": "flutter",
+          "style": "plain",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ]
+        },
+        {
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": "❬ <p:#06aad5> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue626 </>",
+          "foreground": "p:dark",
+          "type": "go",
+          "style": "plain",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ]
+        },
+        {
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": "❬ <p:#906cff> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue61f </>",
+          "foreground": "p:dark",
+          "type": "haskell",
+          "style": "plain",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ]
+        },
+        {
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": "❬ <p:#ec2729> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue738 </>",
+          "foreground": "p:dark",
+          "type": "java",
+          "style": "plain",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ]
+        },
+        {
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": "❬ <p:#945bb3> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} <#ca3c34>\ue624</> </>",
+          "foreground": "p:dark",
+          "type": "julia",
+          "style": "plain",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ]
+        },
+        {
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": "❬ <p:#906cff> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} K </>",
+          "foreground": "p:dark",
+          "type": "kotlin",
+          "style": "plain",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ]
+        },
+        {
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": "❬ <p:#316ce4> {{.Context}} :: {{if .Namespace}}{{.Namespace}}{{else}}default{{end}} \uf308 </>",
+          "foreground": "p:dark",
+          "type": "kubectl",
+          "style": "plain",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ]
+        },
+        {
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": "❬ <p:paleblue> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue620 </>",
+          "foreground": "p:dark",
+          "type": "lua",
+          "style": "plain",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ]
+        },
+        {
+          "properties": {
+            "cache_duration": "none",
+            "fetch_package_manager": true,
+            "npm_icon": "<#cc3a3a>\ue71e</> ",
+            "yarn_icon": "<#348cba>\ue6a7</> "
+          },
+          "template": "❬ <p:#3C873A> {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} \ue718 </>",
+          "foreground": "p:dark",
+          "type": "node",
+          "style": "plain",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ]
+        },
+        {
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": "❬ <p:#6488c0>Nx {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}  </>",
+          "foreground": "p:dark",
+          "type": "nx",
+          "style": "plain",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ]
+        },
+        {
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": "❬ <p:#ffffff> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue769 </>",
+          "foreground": "p:dark",
+          "type": "perl",
+          "style": "plain",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ]
+        },
+        {
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": "❬ <p:#787CB5> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue73d </>",
+          "foreground": "p:dark",
+          "type": "php",
+          "style": "plain",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ]
+        },
+        {
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": "❬ <p:#FFE873> {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }} \ue235 </>",
+          "foreground": "p:dark",
+          "type": "python",
+          "style": "plain",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ]
+        },
+        {
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": "❬ <p:#b9bbbf> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} R </>",
+          "foreground": "p:dark",
+          "type": "r",
+          "style": "plain",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ]
+        },
+        {
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": "❬ <p:#9c1006> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue791 </>",
+          "foreground": "p:dark",
+          "type": "ruby",
+          "style": "plain",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ]
+        },
+        {
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": "❬ <p:midGray> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue7a8 </>",
+          "foreground": "p:dark",
+          "type": "rust",
+          "style": "plain",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ]
+        },
+        {
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": "❬ <p:#fe562e> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue755 </>",
+          "foreground": "p:dark",
+          "type": "swift",
+          "style": "plain",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ]
+        },
+        {
+          "properties": {
+            "cache_duration": "none",
+            "time_format": "15:04:05"
+          },
+          "template": "❬ <p:pathFG> {{ .CurrentDate | date .Format }} \ue641</>",
+          "foreground": "p:dark",
+          "type": "time",
+          "style": "plain",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": "{{ if eq .Env.P6_ENV \"prod\" }}PRD\u2570<p:prod,transparent>\u2574</>{{ else if eq .Env.P6_ENV \"uat\" }}UAT\u2570<p:uat,transparent>\u2574</>{{ else if eq .Env.P6_ENV \"staging\" }}STG\u2570<p:staging,transparent>\u2574</>{{ else if eq .Env.P6_ENV \"dev\" }}DEV\u2570<p:dev,transparent>\u2574</>{{ else }}\u2570\u2574{{ end }}",
+          "foreground": "p:dark",
+          "type": "text",
+          "style": "plain",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ]
+        },
+        {
+          "properties": {
+            "always_enabled": true,
+            "cache_duration": "none"
+          },
+          "template": "❯",
           "foreground": "p:ok",
+          "type": "exit",
+          "style": "plain",
           "foreground_templates": [
             "{{ if gt .Code 0 }}p:warning{{ end }}",
             "{{ if lt .Code 0 }}p:error{{ end }}"
-          ],
-          "properties": {
-            "always_enabled": true
-          },
-          "style": "plain",
-          "template": "\u276f",
-          "type": "exit"
+          ]
         }
-
       ],
-      "type": "prompt"
+      "newline": true
     }
   ],
-  "console_title_template": "{{ .Folder }}{{ if .Root }} (admin){{ end }}",
-  "final_space": true,
-  "version": 2
+  "version": 3,
+  "final_space": true
 }
-
-
-
-

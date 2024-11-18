@@ -24,7 +24,7 @@
     "uat": "p:yellow",
     "prod": "p:redNotice",
 
-    "dark": "#6F6050",
+    "dark": "#50606F",
     "osFG": "p:white",
     "pathSeparator": "p:midGray",
     "pathFG": "p:light"
@@ -73,7 +73,8 @@
             "home_icon": "<p:ok>\ueb06</>",
             "style": "full",
             "mapped_locations": {
-              "~/Projects/*": "<p:ok>\uf09b</>"
+              "~/git/Repos/*": "<p:ok>\uf09b</>",
+              "C:/Windows/*": "<p:ok>\ue62a</>"
             },
             "right_format": "<p:white><b>%s</b></>",
             "folder_separator_icon": "/"

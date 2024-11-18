@@ -46,6 +46,7 @@
           "type": "text"
         },
         {
+          "foreground": "p:dark",
           "foreground_templates": [
             "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
             "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
@@ -78,8 +79,19 @@
             "folder_separator_icon": "/"
           },
           "style": "plain",
-          "template": "{{ .Path }} <p:dark>\u276d</> ",
+          "template": "{{ .Path }} ",
           "type": "path"
+        },
+        {
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ else }}p:dark{{ end }}"
+          ],
+          "style": "plain",
+          "template": "\u276d ",
+          "type": "text"
         },
         {
           "foreground": "p:ok",
@@ -119,8 +131,19 @@
             "always_enabled": true
           },
           "style": "plain",
-          "template": "{{ if eq .Code 0 }}\u2576{{ else }} {{ .Code }} {{ end }}",
+          "template": " {{ .Code }} ",
           "type": "exit"
+        },
+        {
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ else }}p:dark{{ end }}"
+          ],
+          "style": "plain",
+          "template": "\u276d ",
+          "type": "text"
         }
 
       ],
@@ -132,182 +155,350 @@
       "filler": "<p:dark,transparent>\u2500</>",
       "segments": [
         {
-          "foreground": "p:osFG",
+          "foreground": "p:dark",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ],
           "style": "plain",
-          "template": "<p:dark>\u2574\u276c</> {{ .Name }} \uf489 ",
+          "template": "\u2574\u276c <p:osFG> {{ .Name }} \uf489 </>",
           "type": "shell"
         },
         {
-          "foreground": "p:defaultFG",
+          "foreground": "p:dark",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ],
           "style": "plain",
-          "template": "<p:dark>\u276c</> {{ round .PhysicalPercentUsed .Precision }}% \ue266 ",
+          "template": "\u276c <p:defaultFG> {{ round .PhysicalPercentUsed .Precision }}% \ue266 </>",
           "properties": {
             "precision": 0
           },
           "type": "sysinfo"
         },
         {
-          "foreground": "#ce092f",
+          "foreground": "p:dark",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ],
           "style": "plain",
-          "template": "<p:dark>\u276c</> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue753 ",
+          "template": "\u276c <p:#ce092f> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue753 </>",
           "type": "angular"
         },
         {
-          "foreground": "#faa029",
+          "foreground": "p:dark",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ],
           "style": "plain",
-          "template": "<p:dark>\u276c</> {{ .Profile }}{{ if .Region }}@{{ .Region }}{{ end }} \ue7ad ",
+          "template": "\u276c <p:#faa029> {{ .Profile }}{{ if .Region }}@{{ .Region }}{{ end }} \ue7ad </>",
           "type": "aws"
         },
         {
-          "foreground": "#337bb6",
+          "foreground": "p:dark",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ],
           "style": "plain",
-          "template": "<p:dark>\u276c</> {{ .EnvironmentName }} \uFD03 ",
+          "template": "\u276c <p:#337bb6> {{ .EnvironmentName }} \uFD03 </>",
           "type": "az"
         },
         {
-          "foreground": "#5398c2",
+          "foreground": "p:dark",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ],
           "style": "plain",
-          "template": "<p:dark>\u276c</> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \uf104<#f5bf45>\uf0e7</>\uf105 ",
+          "template": "\u276c <p:#5398c2> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \uf104<#f5bf45>\uf0e7</>\uf105 </>",
           "type": "azfunc"
         },
         {
-          "foreground": "#5a7a94",
+          "foreground": "p:dark",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ],
           "style": "plain",
-          "template": "<p:dark>\u276c</> cds {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue311 ",
+          "template": "\u276c <p:#5a7a94> cds {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue311 </>",
           "type": "cds"
         },
         {
-          "foreground": "p:midGray",
+          "foreground": "p:dark",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ],
           "style": "plain",
-          "template": "<p:dark>\u276c</> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \uE370 ",
+          "template": "\u276c <p:midGray> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \uE370 </>",
           "type": "crystal"
         },
         {
-          "foreground": "#055b9c",
+          "foreground": "p:dark",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ],
           "style": "plain",
-          "template": "<p:dark>\u276c</> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue798 ",
+          "template": "\u276c <p:#055b9c> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue798 </>",
           "type": "dart"
         },
         {
-          "foreground": "#0d6da8",
+          "foreground": "p:dark",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ],
           "style": "plain",
-          "template": "<p:dark>\u276c</> {{ if .Unsupported }}\uf071{{ else }}{{ .Full }}{{ end }} \ue77f ",
+          "template": "\u276c <p:#0d6da8> {{ if .Unsupported }}\uf071{{ else }}{{ .Full }}{{ end }} \ue77f </>",
           "type": "dotnet"
         },
         {
-          "foreground": "#06A4CE",
+          "foreground": "p:dark",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ],
           "style": "plain",
-          "template": "<p:dark>\u276c</> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue28e ",
+          "template": "\u276c <p:#06A4CE> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue28e </>",
           "type": "flutter"
         },
         {
-          "foreground": "#06aad5",
+          "foreground": "p:dark",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ],
           "style": "plain",
-          "template": "<p:dark>\u276c</> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue626 ",
+          "template": "\u276c <p:#06aad5> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue626 </>",
           "type": "go"
         },
         {
-          "foreground": "#906cff",
+          "foreground": "p:dark",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ],
           "style": "plain",
-          "template": "<p:dark>\u276c</> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue61f ",
+          "template": "\u276c <p:#906cff> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue61f </>",
           "type": "haskell"
         },
         {
-          "foreground": "#ec2729",
+          "foreground": "p:dark",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ],
           "style": "plain",
-          "template": "<p:dark>\u276c</> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue738 ",
+          "template": "\u276c <p:#ec2729> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue738 </>",
           "type": "java"
         },
         {
-          "foreground": "#945bb3",
+          "foreground": "p:dark",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ],
           "style": "plain",
-          "template": "<p:dark>\u276c</> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} <#ca3c34>\ue624</> ",
+          "template": "\u276c <p:#945bb3> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} <#ca3c34>\ue624</> </>",
           "type": "julia"
         },
         {
-          "foreground": "#906cff",
+          "foreground": "p:dark",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ],
           "style": "plain",
-          "template": "<p:dark>\u276c</> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} K ",
+          "template": "\u276c <p:#906cff> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} K </>",
           "type": "kotlin"
         },
         {
-          "foreground": "#316ce4",
+          "foreground": "p:dark",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ],
           "style": "plain",
-          "template": "<p:dark>\u276c</> {{.Context}} :: {{if .Namespace}}{{.Namespace}}{{else}}default{{end}} \uf308 ",
+          "template": "\u276c <p:#316ce4> {{.Context}} :: {{if .Namespace}}{{.Namespace}}{{else}}default{{end}} \uf308 </>",
           "type": "kubectl"
         },
         {
-          "foreground": "p:paleblue",
+          "foreground": "p:dark",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ],
           "style": "plain",
-          "template": "<p:dark>\u276c</> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue620 ",
+          "template": "\u276c <p:paleblue> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue620 </>",
           "type": "lua"
         },
         {
-          "foreground": "#3C873A",
+          "foreground": "p:dark",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ],
           "properties": {
             "fetch_package_manager": true,
             "npm_icon": "<#cc3a3a>\ue71e</> ",
             "yarn_icon": "<#348cba>\ue6a7</> "
           },
           "style": "plain",
-          "template": "<p:dark>\u276c</> {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} \ue718 ",
+          "template": "\u276c <p:#3C873A> {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} \ue718 </>",
           "type": "node"
         },
         {
-          "foreground": "#6488c0",
+          "foreground": "p:dark",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ],
           "style": "plain",
-          "template": "<p:dark>\u276c</>Nx {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}  ",
+          "template": "\u276c <p:#6488c0>Nx {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}  </>",
           "type": "nx"
         },
         {
-          "foreground": "#ffffff",
+          "foreground": "p:dark",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ],
           "style": "plain",
-          "template": "<p:dark>\u276c</> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue769 ",
+          "template": "\u276c <p:#ffffff> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue769 </>",
           "type": "perl"
         },
         {
-          "foreground": "#787CB5",
+          "foreground": "p:dark",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ],
           "style": "plain",
-          "template": "<p:dark>\u276c</> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue73d ",
+          "template": "\u276c <p:#787CB5> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue73d </>",
           "type": "php"
         },
         {
-          "foreground": "#FFE873",
+          "foreground": "p:dark",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ],
           "style": "plain",
-          "template": "<p:dark>\u276c</> {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }} \ue235 ",
+          "template": "\u276c <p:#FFE873> {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }} \ue235 </>",
           "type": "python"
         },
         {
-          "foreground": "#b9bbbf",
+          "foreground": "p:dark",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ],
           "style": "plain",
-          "template": "<p:dark>\u276c</> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} R ",
+          "template": "\u276c <p:#b9bbbf> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} R </>",
           "type": "r"
         },
         {
-          "foreground": "#9c1006",
+          "foreground": "p:dark",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ],
           "style": "plain",
-          "template": "<p:dark>\u276c</> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue791 ",
+          "template": "\u276c <p:#9c1006> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue791 </>",
           "type": "ruby"
         },
         {
-          "foreground": "p:midGray",
+          "foreground": "p:dark",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ],
           "style": "plain",
-          "template": "<p:dark>\u276c</> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue7a8 ",
+          "template": "\u276c <p:midGray> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue7a8 </>",
           "type": "rust"
         },
         {
-          "foreground": "#fe562e",
+          "foreground": "p:dark",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ],
           "style": "plain",
-          "template": "<p:dark>\u276c</> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue755 ",
+          "template": "\u276c <p:#fe562e> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue755 </>",
           "type": "swift"
         },
         {
-          "foreground": "p:pathFG",
+          "foreground": "p:dark",
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ],
           "properties": {
             "time_format": "15:04:05"
           },
           "style": "plain",
-          "template": "<p:dark>\u276c</> {{ .CurrentDate | date .Format }} \ue641",
+          "template": "\u276c <p:pathFG> {{ .CurrentDate | date .Format }} \ue641</>",
           "type": "time"
         }
 

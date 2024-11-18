@@ -17,8 +17,19 @@
             "folder_separator_icon": "/"
           },
           "style": "plain",
-          "template": "{{ .Path }} <p:dark>\u276d</> ",
+          "template": "{{ .Path }} ",
           "type": "path"
+        },
+        {
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ else }}p:dark{{ end }}"
+          ],
+          "style": "plain",
+          "template": "\u276d ",
+          "type": "text"
         },
         {
           "foreground": "p:ok",
@@ -58,6 +69,17 @@
             "always_enabled": true
           },
           "style": "plain",
-          "template": "{{ if eq .Code 0 }}\u2576{{ else }} {{ .Code }} {{ end }}",
+          "template": " {{ .Code }} ",
           "type": "exit"
+        },
+        {
+          "foreground_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ else }}p:dark{{ end }}"
+          ],
+          "style": "plain",
+          "template": "\u276d ",
+          "type": "text"
         }
