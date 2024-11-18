@@ -7,7 +7,7 @@
             "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
           ],
           "style": "plain",
-          "template": "\u2574\u276c <p:osFG> {{ .Name }} \uf489 </>",
+          "template": "<p:dark>\u2574</>\u276c<p:osFG> {{ .Name }} \uf489 </>",
           "type": "shell"
         },
         {
@@ -19,7 +19,7 @@
             "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
           ],
           "style": "plain",
-          "template": "\u276c <p:defaultFG> {{ round .PhysicalPercentUsed .Precision }}% \ue266 </>",
+          "template": "\u276c<p:defaultFG> {{ round .PhysicalPercentUsed .Precision }}% \ue266 </>",
           "properties": {
             "precision": 0
           },
@@ -34,7 +34,7 @@
             "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
           ],
           "style": "plain",
-          "template": "\u276c <p:#ce092f> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue753 </>",
+          "template": "\u276c<#ce092f> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue753 </>",
           "type": "angular"
         },
         {
@@ -46,7 +46,7 @@
             "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
           ],
           "style": "plain",
-          "template": "\u276c <p:#faa029> {{ .Profile }}{{ if .Region }}@{{ .Region }}{{ end }} \ue7ad </>",
+          "template": "\u276c<#faa029> {{ .Profile }}{{ if .Region }}@{{ .Region }}{{ end }} \ue7ad </>",
           "type": "aws"
         },
         {
@@ -58,7 +58,7 @@
             "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
           ],
           "style": "plain",
-          "template": "\u276c <p:#337bb6> {{ .EnvironmentName }} \uFD03 </>",
+          "template": "\u276c<#337bb6> {{ .EnvironmentName }} \uFD03 </>",
           "type": "az"
         },
         {
@@ -70,7 +70,7 @@
             "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
           ],
           "style": "plain",
-          "template": "\u276c <p:#5398c2> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \uf104<#f5bf45>\uf0e7</>\uf105 </>",
+          "template": "\u276c<#5398c2> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \uf104<#f5bf45>\uf0e7</>\uf105 </>",
           "type": "azfunc"
         },
         {
@@ -82,7 +82,7 @@
             "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
           ],
           "style": "plain",
-          "template": "\u276c <p:#5a7a94> cds {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue311 </>",
+          "template": "\u276c<#5a7a94> cds {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue311 </>",
           "type": "cds"
         },
         {
@@ -94,7 +94,7 @@
             "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
           ],
           "style": "plain",
-          "template": "\u276c <p:midGray> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \uE370 </>",
+          "template": "\u276c<p:midGray> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \uE370 </>",
           "type": "crystal"
         },
         {
@@ -106,7 +106,7 @@
             "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
           ],
           "style": "plain",
-          "template": "\u276c <p:#055b9c> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue798 </>",
+          "template": "\u276c<#055b9c> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue798 </>",
           "type": "dart"
         },
         {
@@ -118,7 +118,7 @@
             "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
           ],
           "style": "plain",
-          "template": "\u276c <p:#0d6da8> {{ if .Unsupported }}\uf071{{ else }}{{ .Full }}{{ end }} \ue77f </>",
+          "template": "\u276c<#0d6da8> {{ if .Unsupported }}\uf071{{ else }}{{ .Full }}{{ end }} \ue77f </>",
           "type": "dotnet"
         },
         {
@@ -130,7 +130,7 @@
             "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
           ],
           "style": "plain",
-          "template": "\u276c <p:#06A4CE> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue28e </>",
+          "template": "\u276c<#06A4CE> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue28e </>",
           "type": "flutter"
         },
         {
@@ -142,7 +142,7 @@
             "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
           ],
           "style": "plain",
-          "template": "\u276c <p:#06aad5> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue626 </>",
+          "template": "\u276c<#06aad5> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue626 </>",
           "type": "go"
         },
         {
@@ -154,7 +154,7 @@
             "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
           ],
           "style": "plain",
-          "template": "\u276c <p:#906cff> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue61f </>",
+          "template": "\u276c<#906cff> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue61f </>",
           "type": "haskell"
         },
         {
@@ -166,7 +166,7 @@
             "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
           ],
           "style": "plain",
-          "template": "\u276c <p:#ec2729> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue738 </>",
+          "template": "\u276c<#ec2729> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue738 </>",
           "type": "java"
         },
         {
@@ -178,7 +178,7 @@
             "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
           ],
           "style": "plain",
-          "template": "\u276c <p:#945bb3> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} <#ca3c34>\ue624</> </>",
+          "template": "\u276c<#945bb3> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} <#ca3c34>\ue624</> </>",
           "type": "julia"
         },
         {
@@ -190,7 +190,7 @@
             "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
           ],
           "style": "plain",
-          "template": "\u276c <p:#906cff> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} K </>",
+          "template": "\u276c<#906cff> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} K </>",
           "type": "kotlin"
         },
         {
@@ -202,7 +202,7 @@
             "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
           ],
           "style": "plain",
-          "template": "\u276c <p:#316ce4> {{.Context}} :: {{if .Namespace}}{{.Namespace}}{{else}}default{{end}} \uf308 </>",
+          "template": "\u276c<#316ce4> {{.Context}} :: {{if .Namespace}}{{.Namespace}}{{else}}default{{end}} \uf308 </>",
           "type": "kubectl"
         },
         {
@@ -214,7 +214,7 @@
             "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
           ],
           "style": "plain",
-          "template": "\u276c <p:paleblue> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue620 </>",
+          "template": "\u276c<p:paleblue> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue620 </>",
           "type": "lua"
         },
         {
@@ -231,7 +231,7 @@
             "yarn_icon": "<#348cba>\ue6a7</> "
           },
           "style": "plain",
-          "template": "\u276c <p:#3C873A> {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} \ue718 </>",
+          "template": "\u276c<#3C873A> {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} \ue718 </>",
           "type": "node"
         },
         {
@@ -243,7 +243,7 @@
             "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
           ],
           "style": "plain",
-          "template": "\u276c <p:#6488c0>Nx {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}  </>",
+          "template": "\u276c<#6488c0>Nx {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}  </>",
           "type": "nx"
         },
         {
@@ -255,7 +255,7 @@
             "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
           ],
           "style": "plain",
-          "template": "\u276c <p:#ffffff> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue769 </>",
+          "template": "\u276c<#ffffff> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue769 </>",
           "type": "perl"
         },
         {
@@ -267,7 +267,7 @@
             "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
           ],
           "style": "plain",
-          "template": "\u276c <p:#787CB5> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue73d </>",
+          "template": "\u276c<#787CB5> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue73d </>",
           "type": "php"
         },
         {
@@ -279,7 +279,7 @@
             "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
           ],
           "style": "plain",
-          "template": "\u276c <p:#FFE873> {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }} \ue235 </>",
+          "template": "\u276c<#FFE873> {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }} \ue235 </>",
           "type": "python"
         },
         {
@@ -291,7 +291,7 @@
             "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
           ],
           "style": "plain",
-          "template": "\u276c <p:#b9bbbf> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} R </>",
+          "template": "\u276c<#b9bbbf> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} R </>",
           "type": "r"
         },
         {
@@ -303,7 +303,7 @@
             "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
           ],
           "style": "plain",
-          "template": "\u276c <p:#9c1006> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue791 </>",
+          "template": "\u276c<#9c1006> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue791 </>",
           "type": "ruby"
         },
         {
@@ -315,7 +315,7 @@
             "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
           ],
           "style": "plain",
-          "template": "\u276c <p:midGray> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue7a8 </>",
+          "template": "\u276c<p:midGray> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue7a8 </>",
           "type": "rust"
         },
         {
@@ -327,7 +327,7 @@
             "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
           ],
           "style": "plain",
-          "template": "\u276c <p:#fe562e> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue755 </>",
+          "template": "\u276c<#fe562e> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue755 </>",
           "type": "swift"
         },
         {
@@ -342,6 +342,6 @@
             "time_format": "15:04:05"
           },
           "style": "plain",
-          "template": "\u276c <p:pathFG> {{ .CurrentDate | date .Format }} \ue641</>",
+          "template": "\u276c<p:pathFG> {{ .CurrentDate | date .Format }} \ue641</>",
           "type": "time"
         }

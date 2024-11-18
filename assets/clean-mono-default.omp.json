@@ -176,7 +176,7 @@
           "properties": {
             "cache_duration": "none"
           },
-          "template": "\u2574❬ <p:osFG> {{ .Name }} \uf489 </>",
+          "template": "<p:dark>\u2574</>❬<p:osFG> {{ .Name }} \uf489 </>",
           "foreground": "p:dark",
           "type": "shell",
           "style": "plain",
@@ -192,7 +192,7 @@
             "cache_duration": "none",
             "precision": 0
           },
-          "template": "❬ <p:defaultFG> {{ round .PhysicalPercentUsed .Precision }}% \ue266 </>",
+          "template": "❬<p:defaultFG> {{ round .PhysicalPercentUsed .Precision }}% \ue266 </>",
           "foreground": "p:dark",
           "type": "sysinfo",
           "style": "plain",
@@ -207,7 +207,7 @@
           "properties": {
             "cache_duration": "none"
           },
-          "template": "❬ <p:#ce092f> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue753 </>",
+          "template": "❬<#ce092f> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue753 </>",
           "foreground": "p:dark",
           "type": "angular",
           "style": "plain",
@@ -222,7 +222,7 @@
           "properties": {
             "cache_duration": "none"
           },
-          "template": "❬ <p:#faa029> {{ .Profile }}{{ if .Region }}@{{ .Region }}{{ end }} \ue7ad </>",
+          "template": "❬<#faa029> {{ .Profile }}{{ if .Region }}@{{ .Region }}{{ end }} \ue7ad </>",
           "foreground": "p:dark",
           "type": "aws",
           "style": "plain",
@@ -237,7 +237,7 @@
           "properties": {
             "cache_duration": "none"
           },
-          "template": "❬ <p:#337bb6> {{ .EnvironmentName }} \ufd03 </>",
+          "template": "❬<#337bb6> {{ .EnvironmentName }} \ufd03 </>",
           "foreground": "p:dark",
           "type": "az",
           "style": "plain",
@@ -252,7 +252,7 @@
           "properties": {
             "cache_duration": "none"
           },
-          "template": "❬ <p:#5398c2> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \uf104<#f5bf45>\uf0e7</>\uf105 </>",
+          "template": "❬<#5398c2> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \uf104<#f5bf45>\uf0e7</>\uf105 </>",
           "foreground": "p:dark",
           "type": "azfunc",
           "style": "plain",
@@ -267,7 +267,7 @@
           "properties": {
             "cache_duration": "none"
           },
-          "template": "❬ <p:#5a7a94> cds {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue311 </>",
+          "template": "❬<#5a7a94> cds {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue311 </>",
           "foreground": "p:dark",
           "type": "cds",
           "style": "plain",
@@ -282,7 +282,7 @@
           "properties": {
             "cache_duration": "none"
           },
-          "template": "❬ <p:midGray> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue370 </>",
+          "template": "❬<p:midGray> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue370 </>",
           "foreground": "p:dark",
           "type": "crystal",
           "style": "plain",
@@ -297,7 +297,7 @@
           "properties": {
             "cache_duration": "none"
           },
-          "template": "❬ <p:#055b9c> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue798 </>",
+          "template": "❬<#055b9c> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue798 </>",
           "foreground": "p:dark",
           "type": "dart",
           "style": "plain",
@@ -312,7 +312,7 @@
           "properties": {
             "cache_duration": "none"
           },
-          "template": "❬ <p:#0d6da8> {{ if .Unsupported }}\uf071{{ else }}{{ .Full }}{{ end }} \ue77f </>",
+          "template": "❬<#0d6da8> {{ if .Unsupported }}\uf071{{ else }}{{ .Full }}{{ end }} \ue77f </>",
           "foreground": "p:dark",
           "type": "dotnet",
           "style": "plain",
@@ -327,7 +327,7 @@
           "properties": {
             "cache_duration": "none"
           },
-          "template": "❬ <p:#06A4CE> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue28e </>",
+          "template": "❬<#06A4CE> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue28e </>",
           "foreground": "p:dark",
           "type": "flutter",
           "style": "plain",
@@ -342,7 +342,7 @@
           "properties": {
             "cache_duration": "none"
           },
-          "template": "❬ <p:#06aad5> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue626 </>",
+          "template": "❬<#06aad5> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue626 </>",
           "foreground": "p:dark",
           "type": "go",
           "style": "plain",
@@ -357,7 +357,7 @@
           "properties": {
             "cache_duration": "none"
           },
-          "template": "❬ <p:#906cff> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue61f </>",
+          "template": "❬<#906cff> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue61f </>",
           "foreground": "p:dark",
           "type": "haskell",
           "style": "plain",
@@ -372,7 +372,7 @@
           "properties": {
             "cache_duration": "none"
           },
-          "template": "❬ <p:#ec2729> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue738 </>",
+          "template": "❬<#ec2729> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue738 </>",
           "foreground": "p:dark",
           "type": "java",
           "style": "plain",
@@ -387,7 +387,7 @@
           "properties": {
             "cache_duration": "none"
           },
-          "template": "❬ <p:#945bb3> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} <#ca3c34>\ue624</> </>",
+          "template": "❬<#945bb3> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} <#ca3c34>\ue624</> </>",
           "foreground": "p:dark",
           "type": "julia",
           "style": "plain",
@@ -402,7 +402,7 @@
           "properties": {
             "cache_duration": "none"
           },
-          "template": "❬ <p:#906cff> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} K </>",
+          "template": "❬<#906cff> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} K </>",
           "foreground": "p:dark",
           "type": "kotlin",
           "style": "plain",
@@ -417,7 +417,7 @@
           "properties": {
             "cache_duration": "none"
           },
-          "template": "❬ <p:#316ce4> {{.Context}} :: {{if .Namespace}}{{.Namespace}}{{else}}default{{end}} \uf308 </>",
+          "template": "❬<#316ce4> {{.Context}} :: {{if .Namespace}}{{.Namespace}}{{else}}default{{end}} \uf308 </>",
           "foreground": "p:dark",
           "type": "kubectl",
           "style": "plain",
@@ -432,7 +432,7 @@
           "properties": {
             "cache_duration": "none"
           },
-          "template": "❬ <p:paleblue> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue620 </>",
+          "template": "❬<p:paleblue> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue620 </>",
           "foreground": "p:dark",
           "type": "lua",
           "style": "plain",
@@ -450,7 +450,7 @@
             "npm_icon": "<#cc3a3a>\ue71e</> ",
             "yarn_icon": "<#348cba>\ue6a7</> "
           },
-          "template": "❬ <p:#3C873A> {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} \ue718 </>",
+          "template": "❬<#3C873A> {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} \ue718 </>",
           "foreground": "p:dark",
           "type": "node",
           "style": "plain",
@@ -465,7 +465,7 @@
           "properties": {
             "cache_duration": "none"
           },
-          "template": "❬ <p:#6488c0>Nx {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}  </>",
+          "template": "❬<#6488c0>Nx {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}  </>",
           "foreground": "p:dark",
           "type": "nx",
           "style": "plain",
@@ -480,7 +480,7 @@
           "properties": {
             "cache_duration": "none"
           },
-          "template": "❬ <p:#ffffff> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue769 </>",
+          "template": "❬<#ffffff> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue769 </>",
           "foreground": "p:dark",
           "type": "perl",
           "style": "plain",
@@ -495,7 +495,7 @@
           "properties": {
             "cache_duration": "none"
           },
-          "template": "❬ <p:#787CB5> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue73d </>",
+          "template": "❬<#787CB5> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue73d </>",
           "foreground": "p:dark",
           "type": "php",
           "style": "plain",
@@ -510,7 +510,7 @@
           "properties": {
             "cache_duration": "none"
           },
-          "template": "❬ <p:#FFE873> {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }} \ue235 </>",
+          "template": "❬<#FFE873> {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }} \ue235 </>",
           "foreground": "p:dark",
           "type": "python",
           "style": "plain",
@@ -525,7 +525,7 @@
           "properties": {
             "cache_duration": "none"
           },
-          "template": "❬ <p:#b9bbbf> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} R </>",
+          "template": "❬<#b9bbbf> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} R </>",
           "foreground": "p:dark",
           "type": "r",
           "style": "plain",
@@ -540,7 +540,7 @@
           "properties": {
             "cache_duration": "none"
           },
-          "template": "❬ <p:#9c1006> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue791 </>",
+          "template": "❬<#9c1006> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue791 </>",
           "foreground": "p:dark",
           "type": "ruby",
           "style": "plain",
@@ -555,7 +555,7 @@
           "properties": {
             "cache_duration": "none"
           },
-          "template": "❬ <p:midGray> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue7a8 </>",
+          "template": "❬<p:midGray> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue7a8 </>",
           "foreground": "p:dark",
           "type": "rust",
           "style": "plain",
@@ -570,7 +570,7 @@
           "properties": {
             "cache_duration": "none"
           },
-          "template": "❬ <p:#fe562e> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue755 </>",
+          "template": "❬<#fe562e> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue755 </>",
           "foreground": "p:dark",
           "type": "swift",
           "style": "plain",
@@ -586,7 +586,7 @@
             "cache_duration": "none",
             "time_format": "15:04:05"
           },
-          "template": "❬ <p:pathFG> {{ .CurrentDate | date .Format }} \ue641</>",
+          "template": "❬<p:pathFG> {{ .CurrentDate | date .Format }} \ue641</>",
           "foreground": "p:dark",
           "type": "time",
           "style": "plain",
