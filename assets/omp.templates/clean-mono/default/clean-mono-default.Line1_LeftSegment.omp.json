@@ -82,6 +82,6 @@
             "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
           ],
           "style": "plain",
-          "template": "\u276d <p:dark>\u2576</>",
+          "template": "\u276d<p:dark>\u2576</>",
           "type": "text"
         }

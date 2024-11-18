@@ -155,7 +155,7 @@
           "properties": {
             "cache_duration": "none"
           },
-          "template": "❭ <p:dark>\u2576</>",
+          "template": "❭<p:dark>\u2576</>",
           "foreground": "p:dark",
           "type": "text",
           "style": "plain",
