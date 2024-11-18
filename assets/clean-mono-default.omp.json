@@ -97,13 +97,14 @@
             "cache_duration": "none"
           },
           "template": "❭ ",
+          "foreground": "p:dark",
           "type": "text",
           "style": "plain",
           "foreground_templates": [
             "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
             "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
             "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
-            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ else }}p:dark{{ end }}"
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
           ]
         },
         {
@@ -154,14 +155,15 @@
           "properties": {
             "cache_duration": "none"
           },
-          "template": "❭ ",
+          "template": "❭ <p:dark>\u2576</>",
+          "foreground": "p:dark",
           "type": "text",
           "style": "plain",
           "foreground_templates": [
             "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
             "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
             "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
-            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ else }}p:dark{{ end }}"
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
           ]
         }
       ]
