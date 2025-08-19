@@ -360,7 +360,7 @@
             "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
           ],
           "style": "plain",
-          "template": "\u276c<#316ce4> {{.Cluster}}{{if .Namespace}} :: {{.Namespace}}{{end}} \ue81d </>",
+          "template": "\u276c<#316ce4> {{.Cluster}}{{if .Namespace}}{{if eq .Namespace 'default'}} :: {{.Namespace}}{{end}}{{end}} \ue81d </>",
           "type": "kubectl"
         },
         {

@@ -80,7 +80,7 @@
             "home_icon": "<p:pathFG>\ueb06</> ",
             "mapped_locations": {
               "C:/Windows/*": "<p:pathFG>\ue62a</> ",
-              "~/git/Repos/*": "<p:pathFG>\ue708</> "
+              "~/git/Repos/*": "<p:pathFG>\uf09b</> "
             },
             "style": "full"
           },
@@ -357,7 +357,7 @@
           },
           "leading_diamond": "\ue0ba",
           "trailing_diamond": "\ue0bc",
-          "template": "\ue81d {{.Cluster}}{{if .Namespace}} :: {{.Namespace}}{{end}} </>",
+          "template": "\ue81d {{.Cluster}}{{if .Namespace}}{{if eq .Namespace 'default'}} :: {{.Namespace}}{{end}}{{end}} ",
           "foreground": "#ffffff",
           "background": "#316ce4",
           "type": "kubectl",
