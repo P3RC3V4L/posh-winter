@@ -298,7 +298,7 @@
           "foreground": "#ffffff",
           "leading_diamond": "\ue0be",
           "style": "diamond",
-          "template": "\ue81d {{.Cluster}}{{if eq .Namespace \"default\"}} :: {{.Namespace}}{{end}} ",
+          "template": "\ue81d {{.Cluster}}{{if ne .Namespace \"default\"}} :: {{.Namespace}}{{end}} ",
           "trailing_diamond": "\ue0b8",
           "type": "kubectl"
         },
