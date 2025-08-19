@@ -150,7 +150,7 @@
           "foreground": "#ffffff",
           "leading_diamond": "<<.\Line1_RightSegment.powerline-lead.value>>",
           "style": "diamond",
-          "template": "\ue81d {{.Cluster}}{{if .Namespace}}{{if eq .Namespace 'default'}} :: {{.Namespace}}{{end}}{{end}} ",
+          "template": "\ue81d {{.Cluster}}{{if eq .Namespace \"default\"}} :: {{.Namespace}}{{end}} ",
           "trailing_diamond": "<<.\Line1_RightSegment.powerline-trail.value>>",
           "type": "kubectl"
         },
