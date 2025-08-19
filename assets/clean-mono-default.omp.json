@@ -419,7 +419,7 @@
           "properties": {
             "cache_duration": "none"
           },
-          "template": "❬<#316ce4> {{.Context}} :: {{if .Namespace}}{{.Namespace}}{{else}}default{{end}} \uf308 </>",
+          "template": "❬<#316ce4> {{.Cluster}}{{if .Namespace}} :: {{.Namespace}}{{end}} \ue81d </>",
           "foreground": "p:dark",
           "type": "kubectl",
           "style": "plain",
