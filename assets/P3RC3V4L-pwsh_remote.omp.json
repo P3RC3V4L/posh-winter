@@ -282,7 +282,7 @@
           "foreground": "#ffffff",
           "leading_diamond": "\ue0ba",
           "style": "diamond",
-          "template": "\u276c<#316ce4> {{.Cluster}}{{if .Namespace}} :: {{.Namespace}}{{end}} \ue81d </>",
+          "template": "\ue81d {{.Cluster}}{{if .Namespace}} :: {{.Namespace}}{{end}} </>",
           "trailing_diamond": "\ue0bc",
           "type": "kubectl"
         },
