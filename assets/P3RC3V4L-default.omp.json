@@ -4,7 +4,7 @@
     "defaultFG": "#cccccc",
     "defaultBG": "#0c0c0c",
     "yellow": "#ffeb95",
-    "blue": "#007ACC",
+    "blue": "#005aaa",
     "orange": "#e95420",
     "white": "#ffffff",
     "plum": "#772953",
@@ -62,7 +62,7 @@
             "windows": "\ue62a"
           },
           "style": "diamond",
-          "template": "{{ if .WSL }}WSL at {{ end }}{{.Icon}} {{ if .Root }}<p:rootBG>\uf132</>{{ end }}",
+          "template": "{{ if .WSL }}WSL at {{ end }}{{.Icon}} {{ if .Root }}<p:rootFG>\uf132</>{{ end }}",
           "type": "os"
         },
         {
@@ -295,7 +295,13 @@
           "type": "kotlin"
         },
         {
-          "background": "#316ce4",
+          "background": "#303030",
+          "background_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ],
           "foreground": "#ffffff",
           "leading_diamond": "\ue0ba",
           "style": "diamond",
@@ -401,6 +407,12 @@
         },
         {
           "background": "p:pathBG",
+          "background_templates": [
+            "{{ if eq .Env.P6_ENV \"prod\" }}p:prod{{ end }}",
+            "{{ if eq .Env.P6_ENV \"uat\" }}p:uat{{ end }}",
+            "{{ if eq .Env.P6_ENV \"staging\" }}p:staging{{ end }}",
+            "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
+          ],
           "foreground": "p:pathFG",
           "leading_diamond": "\ue0ba",
           "properties": {
