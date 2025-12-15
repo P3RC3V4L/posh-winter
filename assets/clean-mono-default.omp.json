@@ -419,7 +419,7 @@
           "properties": {
             "cache_duration": "none"
           },
-          "template": "❬<#316ce4> {{.Cluster}}{{if ne .Namespace \"default\"}} :: {{.Namespace}}{{end}} \ue81d </>",
+          "template": "❬ {{.Cluster}}{{if ne .Namespace \"default\"}} :: {{.Namespace}}{{end}} \ue81d ",
           "foreground": "p:dark",
           "type": "kubectl",
           "style": "plain",
@@ -588,7 +588,7 @@
             "cache_duration": "none",
             "time_format": "15:04:05"
           },
-          "template": "❬<p:pathFG> {{ .CurrentDate | date .Format }} \ue641</>",
+          "template": "❬ {{ .CurrentDate | date .Format }} \ue641",
           "foreground": "p:dark",
           "type": "time",
           "style": "plain",

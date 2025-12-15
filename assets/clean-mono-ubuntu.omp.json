@@ -360,7 +360,7 @@
             "{{ if eq .Env.P6_ENV \"dev\" }}p:dev{{ end }}"
           ],
           "style": "plain",
-          "template": "\u276c<#316ce4> {{.Cluster}}{{if ne .Namespace \"default\"}} :: {{.Namespace}}{{end}} \ue81d </>",
+          "template": "\u276c {{.Cluster}}{{if ne .Namespace \"default\"}} :: {{.Namespace}}{{end}} \ue81d ",
           "type": "kubectl"
         },
         {
@@ -500,7 +500,7 @@
             "time_format": "15:04:05"
           },
           "style": "plain",
-          "template": "\u276c<p:pathFG> {{ .CurrentDate | date .Format }} \ue641</>",
+          "template": "\u276c {{ .CurrentDate | date .Format }} \ue641",
           "type": "time"
         }
 
