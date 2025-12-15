@@ -70,10 +70,10 @@
         {
           "foreground": "p:pathSeparator",
           "properties": {
-            "home_icon": "<p:ok>\ueb06</>",
+            "home_icon": "<p:white>\ueb06</>",
             "style": "full",
             "mapped_locations": {
-              "~/Projects/*": "<p:ok>\uf09b</>"
+
             },
             "right_format": "<p:white><b>%s</b></>",
             "folder_separator_icon": "/"

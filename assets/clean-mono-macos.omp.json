@@ -70,7 +70,7 @@
         {
           "foreground": "p:pathSeparator",
           "properties": {
-            "home_icon": "<p:ok>\ueb06</>",
+            "home_icon": "<p:white>\ueb06</>",
             "style": "full",
             "mapped_locations": {
               "~/git/*": "<p:ok>\uf09b</>"
