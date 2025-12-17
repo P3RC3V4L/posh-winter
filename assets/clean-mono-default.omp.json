@@ -20,7 +20,7 @@
     "plum": "#c792ea",
     "prod": "p:redNotice",
     "redNotice": "p:error",
-    "rootBG": "#ff0000",
+    "rootBG": "#plum",
     "rootFG": "p:white",
     "staging": "p:paleblue",
     "uat": "p:yellow",
